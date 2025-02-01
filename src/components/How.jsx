@@ -13,15 +13,15 @@ const works = [
     image: first,
   },
   {
-    id: 1,
-    title: "Browse Projects",
-    text: "Discover various agricultural projects available for investment",
-    image: second,
-  },
-  {
     id: 2,
     title: "Sign Up to Invest",
     text: "Create an account to start supporting local farmer",
+    image: second,
+  },
+  {
+    id: 3,
+    title: "Invest in Local Farmers",
+    text: "Choose a project and invest in a sustainable future",
     image: third,
   },
   {
@@ -62,7 +62,7 @@ const WorkLoad = ({ title, text, image }) => {
       </div>
       <div>
         <h1 className="font-sanns font-semibold text-xs md:text-lg lg:text-xl">{title}</h1>
-        <p className="font-sanns font-normal text-xs md:text-lg lg:text-xl">{text}</p>
+        <p className="font-sanns font-normal text-xs text-[#000000] lg:text-lg">{text}</p>
       </div>
     </div>
   );

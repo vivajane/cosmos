@@ -68,13 +68,13 @@ const Testimonials = () => {
 export default Testimonials;
 const Testimonial = (testimonial) => {
   return (
-    <li className="bg-white px-4 w-72 shadow-lg py-4 rounded-3xl">
+    <li className="bg-white px-4 w-72 font-sannss shadow-lg py-4 rounded-3xl">
       <img
-        className="h-44 w-full object-cover rounded-md mb-4"
+        className="h-44 w-full object-cover rounded-2xl mb-4"
         src={testimonial.image}
         alt=""
       />
-      <h1 className=" font-sanns font-medium text-[21px]">
+      <h1 className=" font-sanns text-[#141414] font-medium text-[21px]">
         {testimonial.name}
       </h1>
       <p className="text-[#9B9D8E] font-sanns font-normal text-lg">

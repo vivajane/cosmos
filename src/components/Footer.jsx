@@ -13,7 +13,7 @@ import lin from "../assets/lin.png";
 const Footer = () => {
   return (
     <div className=" bg-bgGray font-sanns text-[#FFFFFF]">
-      <div className="md:flex justify-between items-center lg:px-28 sm:px-18 px-8">
+      <div className="md:flex lg:justify-between md:gap-10 block items-center lg:px-28 sm:px-18 px-8">
         <div>
           <div className="font-medium md:text-3xl py-8 md:py-0 sm:text-2xl text-[33px]">
             <NavLink to="/">Cosmos</NavLink>
@@ -35,7 +35,7 @@ const Footer = () => {
             <p>+234 812 345 6789</p>
           </div>
         </div>
-        <div className="grid grid-cols-3 justify-center  gap-4 font-medium  md:text-base">
+        <div className="grid grid-cols-3 gap-16 font-medium  md:text-base">
           <div>
             <h1 className="text-[#EDCF6F] pt-10 pb-4">Investments</h1>
             <ul>
@@ -112,16 +112,15 @@ const Footer = () => {
             <p className="font-interr text-xs md:text-base">2024 Cosmos. All rights reserved.</p>
           </div>
           <div className="flex gap-3 items-center">
-            <span>
+            <NavLink to="#">
               <img src={tw} alt="tw" />
-            </span>
-            <span>
-              {" "}
+            </NavLink>
+            <NavLink to="#">
               <img src={lin} alt="lin" />
-            </span>
-            <span>
+            </NavLink>
+            <NavLink>
               <img src={fb} alt="fb" />
-            </span>
+            </NavLink>
           </div>
         </div>
       </div>
