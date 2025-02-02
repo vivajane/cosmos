@@ -3,6 +3,7 @@ import one from "../assets/manfoot.png";
 import two from "../assets/grassman.png";
 import three from "../assets/footsmile.png";
 import { GrFormNext } from "react-icons/gr";
+import SeeMore from "./SeeMore";
 const testimonials = [
   {
     id: 1,
@@ -28,7 +29,6 @@ const testimonials = [
 ];
 const Testimonials = () => {
   return (
-
     <div className="bg-bgFoot bg-no-repeat relative h-[373px] bg-cover flex flex-col items-center justify-center ">
       <h1 className="font-semibold text-4xl font-sanns text-black text-center pt">
         Testimonials
@@ -39,29 +39,22 @@ const Testimonials = () => {
       <div className="absolute mx-auto md:px-16 px-8 lg:px-28 top-2/3 pb-11 ">
         <ul className="lg:flex sm:grid sm:grid-cols-2 grid-cols-1 items-center justify-center gap-8">
           {testimonials.map((testimonial) => (
-            <li className="pb-2" key={testimonial.id}>
-              <Testimonial
-                name={testimonial.name}
-                text={testimonial.text}
-                image={testimonial.image}
-                date={testimonial.date}
-              />
-            </li>
+            <Testimonial
+              key={testimonial.id}
+              name={testimonial.name}
+              text={testimonial.text}
+              image={testimonial.image}
+              date={testimonial.date}
+            />
           ))}
         </ul>
-        <div className="absolute  bottom-0 right-[110px]">
-          <div className="relative">
-            <button className="text-[#6B911B] text-sm  sm:text-base border-[1px] border-white rounded-full py-2 px-8">
-              See More
-            </button>
-            <span className="absolute right-[5px] text-[#6B911B] top-[12px]">
-              <GrFormNext size={20} />
-            </span>
+        <div className="relative py-4">
+          <div className="absolute  bottom-10px right-[0px]">
+            <SeeMore />
           </div>
         </div>
       </div>
     </div>
-
   );
 };
 
