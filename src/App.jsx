@@ -9,6 +9,8 @@ import Portfolio from './pages/Portfolio'
 import SignUp from './pages/SignUp'
 import Contact from './pages/Contact'
 import Testimonials from './pages/Testimonials'
+import Invest from './components/Invest'
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
   <Route path="signup" element={<SignUp/>}/>
   <Route path="contact" element={<Contact/>}/>
 </Routes>
+
 <Footer/>
 </BrowserRouter>
     </div>

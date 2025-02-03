@@ -42,7 +42,7 @@ const pasts = [
 const Past = () => {
   return (
     <div className="md:px-16 px-8 py-6 lg:px-28">
-        <h1 className="font-semibold text-header text-center py-6 md:py-6 md:text-4xl font-sanns">Past Investments</h1>
+        <h1 className="font-semibold text-header text-center py-6 md:py-6 md:text-4xl font-sanns">Past Investments Opportunities</h1>
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {
             pasts.map((past) => (

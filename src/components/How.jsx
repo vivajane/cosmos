@@ -4,6 +4,7 @@ import first from "../assets/firstCo.png";
 import second from "../assets/secCo.png";
 import third from "../assets/three.png";
 import four from "../assets/fortCo.png";
+import HowItWorksProps from "./HowItWorksProps";
 
 const works = [
   {
@@ -45,7 +46,7 @@ const How = () => {
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-4">
         {works.map((work) => (
           <li className="list-none py-2"  key={work.id}>
-            <WorkLoad title={work.title} text={work.text} image={work.image} />
+            <HowItWorksProps title={work.title} text={work.text} image={work.image} />
           </li>
         ))}
       </div>
@@ -54,16 +55,4 @@ const How = () => {
 };
 
 export default How;
-const WorkLoad = ({ title, text, image }) => {
-  return (
-    <div className="flex items-center py-4 px-2 justify-center gap-4 border-[1px] border-[#E3E3E3] rounded-lg">
-      <div>
-        <img className="w-auto" src={image} alt="image" />
-      </div>
-      <div>
-        <h1 className="font-sanns font-semibold text-xs md:text-lg lg:text-xl">{title}</h1>
-        <p className="font-sanns font-normal text-xs text-[#000000] lg:text-lg">{text}</p>
-      </div>
-    </div>
-  );
-};
+

@@ -1,4 +1,3 @@
-import React from "react";
 import one from "../assets/manfoot.png";
 import two from "../assets/grassman.png";
 import three from "../assets/footsmile.png";
@@ -29,7 +28,7 @@ const testimonials = [
 ];
 const Testimonials = () => {
   return (
-    <div className="bg-bgFoot bg-no-repeat relative h-[373px] bg-cover flex flex-col items-center justify-center ">
+    <div className="bg-bgFoot bg-no-repeat relative h-[373px] bg-cover flex flex-col items-center justify-center lg:mb-72 md:mb-[660px] mb-[890px] sm:mb-[650px] ">
       <h1 className="font-semibold text-4xl font-sanns text-black text-center pt">
         Testimonials
       </h1>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { GrFormNextLink } from "react-icons/gr";
+import Button from './Button';
 
 const Funding = () => {
   return (
@@ -12,7 +13,7 @@ const Funding = () => {
     growth while earning sustainable returns</p>
     <div  className=' gap-2 my-12 sm:my-0 relative '>
     
-    <button className='bg-bgGray text-sm sm:text-base border-[1px] border-white rounded-full text-white py-2 px-8'>Begin Your Investment Journey Today</button>
+    <Button variant="secondary" size="lg">Begin Your Investment Journey Today</Button>
     <span className='absolute right-[5px] top-[7px]'><GrFormNextLink size={30}/></span>
   </div>
   </div>
