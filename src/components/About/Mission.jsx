@@ -58,11 +58,11 @@ export default Mission
 
 const WorkLoad = ({ title, text, image }) => {
     return (
-      <div className="flex items-center shadow-md py-4 px-2 justify-center lg:gap-4 border-[1px] border-[#E3E3E3] rounded-lg">
-        <div className='w-full'>
+      <div className="flex items-center gap-2 shadow-md py-4 px-2 justify-center lg:gap-4 border-[1px] border-[#E3E3E3] rounded-lg">
+        <div className='w'>
           <img className="lg:w-[150px] lg:h-[80px] w-[100px] h-[60px]" src={image} alt="image" />
         </div>
-        <div>
+        <div className='w-full'>
           <h1 className="font-sanns font-semibold text-xs md:text-lg lg:text-lg">{title}</h1>
           <p className="font-sanns font-normal text-xs text-[#9B9D8E] lg:text-sm">{text}</p>
         </div>

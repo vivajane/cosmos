@@ -12,7 +12,8 @@ export default {
         graybg: "#9B9D8E",
         bgGray: "#6B911B",
         colHow: "#FAFFEF",
-        productCol: "#FCFFF5"
+        productCol: "#FCFFF5",
+        test: "#4F6F0D"
       },
       textColor: {
         header: "#6B911B",
