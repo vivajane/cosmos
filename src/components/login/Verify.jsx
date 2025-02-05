@@ -2,7 +2,7 @@ import React from "react";
 import { TbLockPassword } from "react-icons/tb";
 import Button from "../Button";
 
-const Verify = () => {
+const Verify = ({nextSlide}) => {
   return (
     <div className="w-full px-16">
       <div className="flex gap-2 items-center">
@@ -44,6 +44,9 @@ const Verify = () => {
           9
         </div>
       </div>
+      <Button type="submit" onClick={nextSlide} variant="tertiary" size="lg">
+              Verify
+            </Button>
     </div>
   );
 };
