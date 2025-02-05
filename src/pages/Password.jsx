@@ -9,6 +9,9 @@ const Password = () => {
 
     const nextSlide = () => {
         setPassword((password) => (password + 1))
+        if (password === 3) {
+            window.alert('Password Changed, Thank you!')
+        }
     }
   return (
     <div className='md:flex gap-4 h-screen'>

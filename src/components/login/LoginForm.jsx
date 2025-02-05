@@ -10,7 +10,7 @@ const LoginForm = () => {
         navigate('/forgotpassword')
     }
   return (
-    <div className=''>
+    <div className='px-8 md:px-0 pb-8 md:pb-0'>
         <h1 className='font-semibold font-sanns py-6 md:py-0 text-header md:text-[24px] lg:text-[34px]'>Welcome Back!</h1>
         <p className='font-interr text-sm font-normal'>
         Sign in to unlock Investment opportunities
