@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -9,15 +9,30 @@ import Portfolio from './pages/Portfolio'
 import SignUp from './pages/SignUp'
 import Contact from './pages/Contact'
 import Testimonials from './pages/Testimonials'
-import Invest from './components/Invest'
+import ForgotPassword from './components/login/ForgotPassword'
+import Password from './pages/Password'
+// import Invest from './components/Invest'
 
+
+
+const Layout =({children})=>{
+  const location = useLocation();
+  const hideHeaderFooter = location.pathname.includes("/login") || location.pathname.includes("/signup") || location.pathname.includes("/forgotpassword")
+  return (
+    <div>
+      {!hideHeaderFooter && <Header/>}
+      {children}
+      {!hideHeaderFooter && <Footer/>}
+    </div>
+  )
+
+}
 
 function App() {
   return (
     <div>
 <BrowserRouter>
-<Header/>
-
+<Layout>
 <Routes>
   
   <Route path='/' element = {<Home/>}/>
@@ -28,9 +43,10 @@ function App() {
   <Route path="portfolio" element={<Portfolio/>}/>
   <Route path="signup" element={<SignUp/>}/>
   <Route path="contact" element={<Contact/>}/>
+  <Route path='forgotpassword' element={<Password/>}/>
+  
 </Routes>
-
-<Footer/>
+</Layout>
 </BrowserRouter>
     </div>
 

@@ -4,6 +4,9 @@ import Button from "./Button";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+
+
 
 const navbars = [
   {
@@ -22,13 +25,14 @@ const navbars = [
     link: "testimonials",
   },
   {
-    id: 1,
+    id: 4,
     title: "Contact Us",
     link: "contact",
   },
 ];
 
 const Header = () => {
+  const navigate = useNavigate()
   const [open, setOpen] = useState(false);
 
   const onClickHandler = () => {
@@ -63,10 +67,10 @@ const Header = () => {
           ))}
         </ul>
         <div className="md:flex gap-4 hidden">
-          <Button variant="login" size="sm">
+          <Button onClick={() => navigate("/login")} variant="login" size="sm">
             Login
           </Button>
-          <Button variant="signup" size="sm">
+          <Button onClick={() => navigate("/signup")} variant="signup" size="sm">
             Sign up
           </Button>
         </div>
@@ -87,12 +91,12 @@ const Header = () => {
           ))}
           <div className="px-8 ">
             <div className="py-4">
-              <Button variant="login" size="sm">
+              <Button onClick={() => navigate("/login")} variant="login" size="sm">
                 Login
               </Button>
             </div>
             <div>
-              <Button variant="signup" size="sm">
+              <Button onClick={() => navigate("/login")} variant="signup" size="sm">
                 Sign up
               </Button>
             </div>
