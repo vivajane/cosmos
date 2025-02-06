@@ -35,7 +35,7 @@ const Footer = () => {
             <p>+234 812 345 6789</p>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-16 font-medium  md:text-base">
+        <div className="grid grid-cols-3 gap-16 font-medium text-sm  md:text-base">
           <div>
             <h1 className="text-[#EDCF6F] pt-10 pb-4">Investments</h1>
             <ul>
@@ -45,15 +45,13 @@ const Footer = () => {
               <li className="py-2">
                 <NavLink to="/investment">Cassava</NavLink>
               </li>
-              <li className="py-2">
-                <NavLink to="/maize">
+              <li className="flex gap-1 items-center">
+                <div><NavLink to="/maize">
                   Maize
-                  <span className="ml-2">
-                    <button className="bg-white px-3 py-1 rounded-2xl text-black">
+                </NavLink>{" "}</div>
+                <button className="bg-white px-4 py-1 rounded-2xl text-black">
                       New
                     </button>
-                  </span>
-                </NavLink>{" "}
               </li>
               <li className="py-2">
                 <NavLink to="/yam">Yam Tubers</NavLink>

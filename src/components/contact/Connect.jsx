@@ -19,20 +19,20 @@ const Connect = () => {
           <span>
             <LuMapPin size={16} />
           </span>
-          <p>1054 Eric Moore close, 71. New Site South Side.</p>
+          <p className="font-normal sm:text-base text-xs md:text-lg">1054 Eric Moore close, 71. New Site South Side.</p>
         </div>
         <div className="flex gap-2 py-4 items-center">
           <span>
             <IoIosCall size={16} />
           </span>
-          <p>+234 768 9110 55</p>
+          <p className="font-normal text-xs sm:text-base md:text-lg">+234 768 9110 55</p>
         </div>
 
         <div className="flex gap-2 items-center">
           <span>
             <MdOutlineEmail size={16} />
           </span>
-          <p>Companyemail@email.com</p>
+          <p className="font-normal text-xs sm:text-base md:text-lg">Companyemail@email.com</p>
         </div>
         <div className="pt-8 pb-4">
           <img className="w-full h-fit" src={map} alt="mapp" />

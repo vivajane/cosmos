@@ -41,6 +41,8 @@ const Header = () => {
   const onCloseHandler = () => {
     setOpen(false);
   };
+
+  
   return (
     <header
       className={`relative font-inter font-sans text-base font-medium justify-between pt-4  ${
@@ -75,8 +77,8 @@ const Header = () => {
           </Button>
         </div>
 
-        <ul
-          className={`w-full absolute top-16 h-screen gap-6 pt- text-center flex flex-col  mt-4 overflow-hidden ${
+        <ul onClick={onCloseHandler}
+          className={`w-full absolute top-16 h-screen gap-2 text-center flex flex-col  mt-2 overflow-hidden ${
             open ? "bg-graybg inset-0 " : "hidden"
           }`}
         >
@@ -90,13 +92,13 @@ const Header = () => {
             </li>
           ))}
           <div className="px-8 ">
-            <div className="py-4">
+            <div className="">
               <Button onClick={() => navigate("/login")} variant="login" size="sm">
                 Login
               </Button>
             </div>
-            <div>
-              <Button onClick={() => navigate("/login")} variant="signup" size="sm">
+            <div className="mt-4">
+              <Button onClick={() => navigate("/signup")} variant="signup" size="sm">
                 Sign up
               </Button>
             </div>

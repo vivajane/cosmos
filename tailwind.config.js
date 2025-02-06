@@ -25,7 +25,7 @@ export default {
      backgroundImage: {
       bgFund: "url('https://media.istockphoto.com/id/2023691686/photo/farmer-working-in-the-field.jpg?s=612x612&w=0&k=20&c=dmqnAF2SvYggHjNUC1rRO107tQvUoV3gA9SevYyMvfc=')",
       bgFoot: "url('/foottest.jpg')",
-      sectionImg: "url('https://media.istockphoto.com/id/1613635173/photo/indian-farmers-working-in-green-agriculture-field-man-and-woman-works-together-pick-leaves.jpg?s=612x612&w=0&k=20&c=kkpqOnPwJhKMazOdTel-qVBCY6lW34EjbENvguosbj0=')",
+      sectionImg: "url('https://media.istockphoto.com/id/1373228682/photo/shot-of-a-young-woman-working-on-a-farm.jpg?s=612x612&w=0&k=20&c=21Xh5ONIFu08mBXNsv6VLAtjBicv7e3GPRo6BTnpyY8=')",
     }
   },
   plugins: [],
