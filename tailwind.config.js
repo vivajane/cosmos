@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sanns: "DM Sans",
         interr: "Inter",
+        manrope: "manrope"
       },
       backgroundColor: {
         header: "#FFFFFF",

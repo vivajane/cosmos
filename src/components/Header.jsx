@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/growlogo.svg"
 
 
 
@@ -45,7 +46,7 @@ const Header = () => {
   
   return (
     <header
-      className={`relative font-inter font-sans text-base font-medium justify-between pt-4  ${
+      className={`relative font-inter py-4 font-sans text-base font-medium justify-between pt-4  ${
         open && "overflow-hidden h-screen"
       }`}
     >
@@ -53,7 +54,7 @@ const Header = () => {
         className={`flex justify-between items-center py-1 bg-header lg:px-28 sm:px-18 px-8 `}
       >
         <div className="font-sanns text-blacky font-medium text-[28px] sm:[30px] md:text-[40px] lg:text-[48px] leading-[60px]">
-          <NavLink to="/">Cosmos</NavLink>
+          <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
         </div>
         <div className="md:hidden block" onClick={onClickHandler}>
           {open ? <FaTimes /> : <IoMdMenu />}

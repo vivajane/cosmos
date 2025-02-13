@@ -6,6 +6,11 @@ import Button from '../Button'
 const LoginForm = () => {
     const navigate = useNavigate()
 
+    const onSubmitHandler = (e) => {
+      e.preventDefault();
+      navigate("/sidebar");
+    }
+
     const nextForget = ()=> {
         navigate('/forgotpassword')
     }
@@ -15,7 +20,7 @@ const LoginForm = () => {
         <p className='font-interr text-sm font-normal'>
         Sign in to unlock Investment opportunities
         </p>
-        <form>
+        <form onSubmit={onSubmitHandler}>
         <div className='py-2'>
             <label className='font-normal text-base' htmlFor="email">Email Address</label>
             <input className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="email" name="email" id="email" placeholder='   Email address' />
