@@ -1,5 +1,5 @@
 import SideBarFooter from "./SideBarFooter";
-import SideBarHeader from "./SidebarHeader";
+import SideBarHeader from "./SideBarHeader";
 import SideBarMenu from "./SideBarMenu";
 import { Outlet } from "react-router-dom";
 import SideFooterTwo from "./SideFooterTwo";
