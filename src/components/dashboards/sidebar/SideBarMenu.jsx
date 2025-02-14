@@ -20,12 +20,17 @@ const SideBarMenu = () => {
           <img src={overview} alt="overview" />
           <div className="font-sanns text-base font-medium">
             <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-l-4 border-[#6B911B]" : ""
-              }
+              
               to="/sidebar/overview"
             >
-              Overview
+              {({ isActive }) => (
+              <>
+                {isActive && (
+                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                )}
+                <span>Overview</span>
+              </>
+            )}
             </NavLink>
           </div>
         </div>
@@ -34,12 +39,18 @@ const SideBarMenu = () => {
           <img src={investment} alt="invest" />
           <div className="font-sanns text-[#1E1E1E] text-base font-medium">
             <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-l-4 border-[#6B911B]" : ""
-              }
+              
               to="/sidebar/investments"
             >
-              Investments
+               {({ isActive }) => (
+              <>
+                {isActive && (
+                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                )}
+                <span>Investment</span>
+              </>
+            )}
+              
             </NavLink>
           </div>
         </div>
@@ -48,12 +59,17 @@ const SideBarMenu = () => {
           <img src={wallet} alt="wallet" />
           <div className="font-sanns text-base font-medium">
             <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-l-4 border-[#6B911B]" : ""
-              }
+             
               to="/sidebar/wallet"
             >
-              Wallet
+               {({ isActive }) => (
+              <>
+                {isActive && (
+                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                )}
+                <span>Wallet</span>
+              </>
+            )}
             </NavLink>
           </div>
         </div>

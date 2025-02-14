@@ -6,10 +6,10 @@ import SideFooterTwo from "./SideFooterTwo";
 
 const SideBar = () => {
   return (
-    <div className="relative">
+    <div className="relative h-screen">
       <div className="grid grid-cols-[220px_1fr]">
         <div className="border-r-2">
-          <div className=" sticky h-[calc(100vh-32px-48px)] overflow-y-scroll ">
+          <div className=" sticky top-0 h-screen overflow-y-auto ">
             <div className=" ">
               <SideBarHeader/>
               <SideBarMenu />
@@ -17,10 +17,11 @@ const SideBar = () => {
             <div className="">
               <SideBarFooter />
             </div>
-          </div>
-          <div>
+            <div>
             <SideFooterTwo />
           </div>
+          </div>
+          
         </div>
 
         <div>

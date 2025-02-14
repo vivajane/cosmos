@@ -4,7 +4,7 @@ import { SlOptionsVertical } from "react-icons/sl";
 
 const SideFooterTwo = () => {
   return (
-    <div className="px-2 font-manrope h-[calc(100vh-48px-16px)] sticky">
+    <div className="px-2 font-manrope py-[5px]">
       <div className="flex gap-8  items-center">
         <div className="flex items-center gap-4">
           <img className="h-10 w-10 rounded-full" src={face} alt="face" />
