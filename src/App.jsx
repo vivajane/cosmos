@@ -10,7 +10,6 @@ import SignUp from "./pages/SignUp";
 import Contact from "./pages/Contact";
 import Testimonials from "./pages/Testimonials";
 import Password from "./pages/Password";
-// import Dashboard from "./components/dashboards/Dashboard";
 import Overview from "./components/dashboards/metrics/Overview";
 import SideBar from "./components/dashboards/sidebar/SideBar";
 
