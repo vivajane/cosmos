@@ -1,7 +1,8 @@
 import React from 'react'
 import SideBar from '../sidebar/SideBar'
-import UserDashBoardHeader from './userDashBoardHeader'
+
 import Path from './Path'
+import UserDashBoardHeader from './UserDashBoardHeader'
 
 
 const UserDashboard = () => {
