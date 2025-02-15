@@ -3,6 +3,7 @@ import Card from './Cards'
 import RoiGrowth from './RoiGrowth'
 import Graph from './Graph'
 import ProjectOverview from './ProjectOverview'
+import TableOverview from './TableOverview'
 
 const ContainerCard = () => {
   return (
@@ -13,6 +14,7 @@ const ContainerCard = () => {
       <Graph/>
       </div>
       <ProjectOverview/>
+      <TableOverview/>
     </div>
   )
 }

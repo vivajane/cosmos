@@ -19,7 +19,7 @@ const SideBarMenu = () => {
           <div className={`absolute left-[5px] h-8 $  `}></div>
           <img src={overview} alt="overview" />
           <div className="font-sanns text-base font-medium">
-            <NavLink
+            <NavLink className={({isActive}) => isActive ? "bg-[#0000001A] pl-[3px] pr-16 py-2 rounded-md" : ""}
               
               to="/sidebar/overview"
             >
@@ -38,7 +38,7 @@ const SideBarMenu = () => {
           <div className={`absolute left-[5px] h-8 $  `}></div>
           <img src={investment} alt="invest" />
           <div className="font-sanns text-[#1E1E1E] text-base font-medium">
-            <NavLink
+            <NavLink className={({isActive}) => isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""}
               
               to="/sidebar/investments"
             >
@@ -58,7 +58,7 @@ const SideBarMenu = () => {
           <div className={`absolute left-[5px] h-8 $  `}></div>
           <img src={wallet} alt="wallet" />
           <div className="font-sanns text-base font-medium">
-            <NavLink
+            <NavLink className={({isActive}) => isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""}
              
               to="/sidebar/wallet"
             >

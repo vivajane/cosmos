@@ -12,6 +12,7 @@ import Testimonials from "./pages/Testimonials";
 import Password from "./pages/Password";
 import Overview from "./components/dashboards/metrics/Overview";
 import SideBar from "./components/dashboards/sidebar/SideBar";
+import UserDashboard from "./components/dashboards/userDashboard/UserDashboard";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -19,7 +20,8 @@ const Layout = ({ children }) => {
     location.pathname.includes("/login") ||
     location.pathname.includes("/signup") ||
     location.pathname.includes("/forgotpassword") ||
-    location.pathname.includes("/sidebar");
+    location.pathname.includes("/sidebar") || 
+    location.pathname.includes("/userDashboard")
   return (
     <div>
       {!hideHeaderFooter && <Header />}
@@ -45,6 +47,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="forgotpassword" element={<Password />} />
             <Route path="overview" element={<Overview />} />
+            <Route path="userdashboard" element={<UserDashboard/>} />
             <Route path="sidebar" element={<SideBar />}>
               <Route path="overview" element={<Overview />} />
             </Route>

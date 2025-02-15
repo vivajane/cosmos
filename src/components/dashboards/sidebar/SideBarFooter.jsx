@@ -11,12 +11,17 @@ const SideBarFooter = () => {
           <img src={setting} alt="invest" />
           <div className="font-sanns text-base font-medium">
             <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-l-4 border-[#6B911B]" : ""
-              }
+              
               to="/sidebar/investments"
             >
-              Settings
+                {({ isActive }) => (
+              <>
+                {isActive && (
+                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                )}
+                <span>Settings</span>
+              </>
+            )}
             </NavLink>
           </div>
         </div>
@@ -25,12 +30,17 @@ const SideBarFooter = () => {
           <img src={help} alt="help" />
           <div className="font-sanns text-base font-medium">
             <NavLink
-              className={({ isActive }) =>
-                isActive ? "border-l-4 border-[#6B911B]" : ""
-              }
+              
               to="/sidebar/investments"
             >
-              Help & Support
+                {({ isActive }) => (
+              <>
+                {isActive && (
+                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                )}
+                <span>Help & Support</span>
+              </>
+            )}
             </NavLink>
           </div>
         </div>

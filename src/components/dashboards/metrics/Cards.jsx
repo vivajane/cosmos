@@ -20,7 +20,7 @@ const cards = [
 
 const Card = () => {
   return (
-    <div className="border-r-2">
+    <div className="">
       <h1 className="font-sanns font-medium text-[22px]">Key Metrics</h1>
       <div className="py-3" >
         <ul className=" flex justify-start gap-36 border-b-2 border-dotted py-6 ">
