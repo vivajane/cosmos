@@ -32,8 +32,8 @@ const paths = [
 const Path = () => {
   return (
     <div>
-      <div className="border-[#1BA019] rounded-lg">
-        <ul className="flex  gap-20 items-center justify-between">
+      <div className="border-[#1BA019] px-4 rounded-lg">
+        <ul className="flex  gap-16 items-center justify-between">
           {paths.map((path) => {
             return (
               <li

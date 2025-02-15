@@ -68,7 +68,7 @@ const UserDashBoardHeader = () => {
           <RiArrowDownSFill/>
           </div>
         </div>
-        <div className="relative border-2 w-full rounded-lg py-1.5 pl-2 ">
+        <div className="relative border-2 w-full rounded-lg py-6 pl-2 ">
           <select className="appearance-none" name="timeframe" id="timeframe">
             <option value="time"><span className="font-sanns font-medium text-base text-[#000000B2]" >Timeframe:</span> <span className="font-sanns font-medium text-base text-[#000000]">All-time</span></option>
           </select>
