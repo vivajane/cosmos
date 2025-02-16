@@ -4,6 +4,7 @@ import Path from './Path'
 import UserDashBoardHeader from './UserDashBoardHeader'
 import UserChartContainer from './UserChartContainer'
 import Notification from './Notification'
+import DashBoardTable from './DashBoardTable'
 
 
 const UserDashboard = () => {
@@ -17,6 +18,7 @@ const UserDashboard = () => {
             <Path/>
             <UserChartContainer/>
             <Notification/>
+            <DashBoardTable/>
         </div>
       
     </div>

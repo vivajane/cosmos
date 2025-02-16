@@ -29,7 +29,7 @@ const LeftChart = () => {
   return (
     <div className="h-96 mt-14   w-1/2  rounded-2xl shadow-xl pl-8">
       <div className="flex py-6 justify-between items-center">
-      <h2 className="text-gray-700 text-lg font-semibold "> Earnings Balance</h2>
+      <h2 className="text-[#4D4D4D] text-sm font-semibold "> Earnings Balance</h2>
       <div className="text-[#1BA019]">
       <RiArrowDownSLine size={20}/>
       </div>

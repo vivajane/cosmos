@@ -5,6 +5,7 @@ import face from "../../../assets/face.jpeg";
 import { CiSearch } from "react-icons/ci";
 import ProgressIndicator from "./ProgressBar";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { IoIosNotifications } from "react-icons/io";
 
 const UserDashBoardHeader = () => {
   return (
@@ -26,11 +27,7 @@ const UserDashBoardHeader = () => {
         </div>
         <div className="flex gap-4 items-center">
           <div>
-            <img
-              className="bg-[#1BA019] text-[#1BA019] mt-3 border-[#1BA019] rounded-lg"
-              src={bell}
-              alt="bell"
-            />
+            <button className="text-[#1BA019] mt-4"><IoIosNotifications size={25}/></button>
           </div>
           <div className="border-[1px] py-1 mt-3 border-[#1BA019] relative rounded flex items-center">
             <CiSearch className="text-[#1BA019] mr-2" size={20} />

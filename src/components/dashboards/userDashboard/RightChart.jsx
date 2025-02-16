@@ -2,9 +2,8 @@ import React from "react";
 
 const RightChart = ({ name, percentage, color, img }) => {
   return (
-    <div className="mb-2 px-4 "> 
-        
-      <div className="flex justify-between items-center text-sm font-medium">
+    <div className="py-6  px-4 ">
+      <div className="flex gap-3 items-center text-sm  font-medium">
         <img src={img} alt="" />
         <div className="w-full space-x-2">
           <span>{name}</span>
@@ -15,7 +14,7 @@ const RightChart = ({ name, percentage, color, img }) => {
             ></div>
           </div>
         </div>
-        <span className="font-medium  text-sm">{percentage}% to goal</span>
+        <span className="font-medium w-full text-sm">{percentage}% to goal</span>
       </div>
     </div>
   );
