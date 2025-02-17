@@ -9,6 +9,7 @@ import { CiFacebook } from "react-icons/ci";
 import tw from "../assets/tw.png";
 import fb from "../assets/fb.png";
 import lin from "../assets/lin.png";
+import logowhite from "../assets/growhitee.png"
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
       <div className="md:flex lg:justify-between md:gap-10 block items-center lg:px-28 sm:px-18 px-8">
         <div>
           <div className="font-medium md:text-3xl py-8 md:py-0 sm:text-2xl text-[33px]">
-            <NavLink to="/">Cosmos</NavLink>
+            <NavLink to="/"><img src={logowhite} alt="white logo" /></NavLink>
           </div>
           <p className="py-3 font-normal md:text-base">
             Invest in amazing agro opportunities that <br /> create more happy
@@ -107,7 +108,7 @@ const Footer = () => {
             <span>
               <PiCopyrightFill />
             </span>
-            <p className="font-interr text-xs md:text-base">2024 Cosmos. All rights reserved.</p>
+            <p className="font-interr text-xs md:text-base">2024 Grow. All rights reserved.</p>
           </div>
           <div className="flex gap-3 items-center">
             <NavLink to="#">

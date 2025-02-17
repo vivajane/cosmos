@@ -7,7 +7,7 @@ const RightChart = ({ name, percentage, color, img }) => {
         <img src={img} alt="" />
         <div className="w-full space-x-2">
           <span>{name}</span>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-gradient-to-r from-[#FFBF1A] to-[#FF4080]  rounded-full h-2">
             <div
               className={`h-2 rounded-full transition-all ${color}`}
               style={{ width: `${percentage}%` }}

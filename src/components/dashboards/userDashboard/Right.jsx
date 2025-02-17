@@ -13,21 +13,21 @@ const Right = ({ name, percentage, color }) => {
         <RightChart
           name="Cocoa"
           percentage={74}
-          color="bg-red-500"
+          color="linear-gradient(to right, #FFBF1A, #FF4080)"
           img={cocoa}
         />
         
         <RightChart
           name="Vegetable"
           percentage={52}
-          color="bg-green-500"
+          color="linear-gradient(to right, #FFBF1A, #FF4080)"
           img={veg}
         />
         
         <RightChart
           name="Cassava"
           percentage={36}
-          color="bg-orange-500"
+          color="linear-gradient(to right, #FFBF1A, #FF4080)"
           img={coke}
         />
         

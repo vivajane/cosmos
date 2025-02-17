@@ -1,8 +1,8 @@
-import SideBarFooter from "./SideBarFooter";
-import SideBarHeader from "./SideBarHeader";
-import SideBarMenu from "./SideBarMenu";
 import { Outlet } from "react-router-dom";
-import SideFooterTwo from "./SideFooterTwo";
+import SideBarFooter from "../components/dashboards/sidebar/SideBarFooter";
+import SideBarHeader from "../components/dashboards/sidebar/SideBarHeader";
+import SideBarMenu from "../components/dashboards/sidebar/SideBarMenu";
+import SideFooterTwo from "../components/dashboards/sidebar/SideFooterTwo";
 
 const SideBar = () => {
   return (
@@ -15,7 +15,7 @@ const SideBar = () => {
               <SideBarMenu />
             </div>
             <div className="">
-              <SideBarFooter />
+              <SideBarFooter/>
             </div>
             <div>
             <SideFooterTwo />

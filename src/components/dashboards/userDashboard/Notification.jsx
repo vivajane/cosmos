@@ -15,7 +15,7 @@ const Notification = () => {
           </div>
         </div>
         <div className="relative ">
-          <select className="appearance-none textt-black border-[1px] border-black px-8 py-1 rounded-lg" name="timeframe" id="timeframe">
+          <select className="appearance-none textt-black border-[1px] border-black px-10 py-1 rounded-lg" name="timeframe" id="timeframe">
             <option className="font-inter font-medium text-[15px] text-[#FFFFFF]"  value="all">
               All
             </option>

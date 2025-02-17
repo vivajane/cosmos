@@ -10,9 +10,12 @@ import SignUp from "./pages/SignUp";
 import Contact from "./pages/Contact";
 import Testimonials from "./pages/Testimonials";
 import Password from "./pages/Password";
-import Overview from "./components/dashboards/metrics/Overview";
-import SideBar from "./components/dashboards/sidebar/SideBar";
+import Overview from "./pages/Overview";
+import SideBar from "./pages/SideBar";
 import UserDashboard from "./components/dashboards/userDashboard/UserDashboard";
+import Investment from "./pages/Investment";
+import Wallet from "./pages/Wallet";
+import NewProject from "./pages/NewProject";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -20,8 +23,8 @@ const Layout = ({ children }) => {
     location.pathname.includes("/login") ||
     location.pathname.includes("/signup") ||
     location.pathname.includes("/forgotpassword") ||
-    location.pathname.includes("/sidebar") || 
-    location.pathname.includes("/userDashboard")
+    location.pathname.includes("/sidebar") ||
+    location.pathname.includes("/userDashboard");
   return (
     <div>
       {!hideHeaderFooter && <Header />}
@@ -47,9 +50,14 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="forgotpassword" element={<Password />} />
             <Route path="overview" element={<Overview />} />
-            <Route path="userdashboard" element={<UserDashboard/>} />
+            <Route path="userdashboard" element={<UserDashboard />} />
             <Route path="sidebar" element={<SideBar />}>
+              <Route index element={<Overview />} />
               <Route path="overview" element={<Overview />} />
+              <Route path="investments" element={<Investment />}>
+                <Route path="projects" element={<NewProject />} />
+              </Route>
+              <Route path="wallet" element={<Wallet />} />
             </Route>
           </Routes>
         </Layout>

@@ -1,8 +1,6 @@
-import React from 'react'
-import MetricsLeft from './MetricsLeft'
-import MetricsRight from './MetricsRight'
-import MetricsHeader from './MetricsHeader'
-import MetricsMain from './MetricsMain'
+
+import MetricsHeader from '../components/dashboards/metrics/MetricsHeader'
+import MetricsMain from '../components/dashboards/metrics/MetricsMain'
 
 const Overview = () => {
   return (

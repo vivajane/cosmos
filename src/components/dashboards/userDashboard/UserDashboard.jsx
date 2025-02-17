@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBar from '../sidebar/SideBar'
+import SideBar from '../../../pages/SideBar'
 import Path from './Path'
 import UserDashBoardHeader from './UserDashBoardHeader'
 import UserChartContainer from './UserChartContainer'
