@@ -3,6 +3,7 @@ import InvestmentHeader from "../components/investments/InvestmentHeader";
 import InvestmentOverview from "../components/investments/InvestmentOverview";
 import InvestmentPorfolio from "../components/investments/InvestmentPorfolio";
 import { Outlet, useLocation } from "react-router-dom";
+import Pagination from "../components/investments/newprojects/Pagination";
 
 const Investment = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const Investment = () => {
             <InvestmentHeader />
             <InvestmentOverview />
             <InvestmentPorfolio />
+            <Pagination/>
           </>
         )}
       </div>

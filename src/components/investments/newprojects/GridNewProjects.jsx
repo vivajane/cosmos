@@ -83,7 +83,7 @@ const products = [
     min: 100000,
   },
 ];
-const GridNewProjects = ({ setSelected }) => {
+const GridNewProjects = ({ setSelected, setShow }) => {
   console.log("GridNewProjects received setSelected:", setSelected);
   return (
     <div>
@@ -101,6 +101,7 @@ const GridNewProjects = ({ setSelected }) => {
               image={product.image}
               min={product.min}
               setSelected={setSelected}
+              setShow={setShow}
             />
           </li>
         ))}
@@ -111,7 +112,7 @@ const GridNewProjects = ({ setSelected }) => {
 
 export default GridNewProjects;
 
-const Products = ({ image, text, status, roi, name, min, setSelected }) => {
+const Products = ({ image, text, status, roi, name, min, setSelected, setShow }) => {
   console.log("Products component rendered. setSelected:", setSelected);
   return (
     <div className="font-sanns">
@@ -139,7 +140,7 @@ const Products = ({ image, text, status, roi, name, min, setSelected }) => {
         >
           View Details
         </button>
-        <button className="bg-bgGray text-white py-1 px-3 rounded">
+        <button onClick={() => setShow({ name, roi, min })} className="bg-bgGray text-white py-1 px-3 rounded">
           Invest Now
         </button>
       </div>

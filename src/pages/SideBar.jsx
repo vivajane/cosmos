@@ -9,7 +9,7 @@ const SideBar = () => {
     <div className="relative h-screen">
       <div className="grid grid-cols-[220px_1fr]">
         <div className="border-r-2">
-          <div className=" sticky top-0 h-screen overflow-y-auto ">
+          <div className=" sticky top-0 h-screenn overflow-y-auto ">
             <div className=" ">
               <SideBarHeader/>
               <SideBarMenu />
