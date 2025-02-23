@@ -1,4 +1,4 @@
-import React from "react";
+
 import tomato from "../../../assets/tomatogrid.png";
 import coco from "../../../assets/coco.png";
 import lastgrid from "../../../assets/lastgrid.png";
@@ -7,7 +7,7 @@ import maizegrid from "../../../assets/maizegrid.png";
 import poultry from "../../../assets/poultrygrid.png";
 import soy from "../../../assets/soy.png";
 import rice from "../../../assets/ricegrid.png";
-import Button from "../../Button";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   {
@@ -84,6 +84,7 @@ const products = [
   },
 ];
 const GridNewProjects = ({ setSelected, setShow }) => {
+  const navigate = useNavigate();
   console.log("GridNewProjects received setSelected:", setSelected);
   return (
     <div>
@@ -123,10 +124,10 @@ const Products = ({ image, text, status, roi, name, min, setSelected, setShow })
         </h1>
         <p className="font-normal text-sm text-[#1E1E1EBF]">{text}</p>
         <p className="font-normal text-sm">
-          <span className="text-[#1E1E1EBF]">Status:</span>{" "}
-          <span className="text-[#000000] ">{status}</span>{" "}
+          <span className="text-[#1E1E1EBF]">Status:</span>
+          <span className="text-[#000000] ">{status}</span>
           <span className="text-[#1E1E1EBF]">ROI: </span>
-          <span className="text-[#000000] ">{roi}%</span>
+          <span className="text-[#000000] ">{roi}</span>
         </p>
         <p>
           <span className="text-[#1E1E1EBF]">Min.Investment : #</span>
@@ -136,11 +137,11 @@ const Products = ({ image, text, status, roi, name, min, setSelected, setShow })
       <div className="flex justify-between items-center pt-4 pb-2">
         <button
           className="text-[#6B911B] font-semibold text-base"
-          onClick={() => setSelected({ name, image, text, min })}
+          onClick={() => setSelected({ name, image, text, min, status, roi })}
         >
           View Details
         </button>
-        <button onClick={() => setShow({ name, roi, min })} className="bg-bgGray text-white py-1 px-3 rounded">
+        <button onClick={() => setShow({ name, roi, min, status })} className="bg-bgGray text-white py-1 px-3 rounded">
           Invest Now
         </button>
       </div>

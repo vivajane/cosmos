@@ -3,7 +3,6 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { CiSearch } from "react-icons/ci";
 import PropOverview from "./PropOverview";
 
-
 const overviewdata = [
   {
     name: "April Maze Cycle",
@@ -83,8 +82,8 @@ const overviewdata = [
 const InvestmentPorfolio = () => {
   return (
     <div className="pb-4">
-      <div >
-      <PropOverview name= "Investment Portfolio"/>
+      <div>
+        <PropOverview name="Investment Portfolio" />
       </div>
       <table>
         <thead className="bg-[#0000000D] shadow-md">
@@ -107,9 +106,22 @@ const InvestmentPorfolio = () => {
               <td className="font-sanns font-normal text-sm text-[#4F5144]">
                 {data.name}
               </td>
-              <td className="font-sanns font-normal text-xs text-[#4F5144]">
-                {data.status}
+              <td>
+                <span
+                  className={`${
+                    data.status === "active"
+                      ? "text-[#E2F1FC] bg-[#02487A]"
+                      : data.status === "completed"
+                      ? "text-[#027A48] bg-[#ECFDF3]"
+                      : data.status === "pending"
+                      ? "text-[#713F12] bg-[#FEF9C3]"
+                      : "text-gray-500 bg-gray-200"
+                  } px-2 py-1 rounded-md`}
+                >
+                  {data.status}
+                </span>
               </td>
+
               <td className="font-sanns font-normal text-sm text-[#4F5144]">
                 {data.amount}
               </td>

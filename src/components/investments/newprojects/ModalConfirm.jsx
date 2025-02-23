@@ -9,26 +9,14 @@ const ModalConfirm = () => {
           <h1 className="text-2xl text-[#6B911B] font-medium">
             Investment Confirmation
           </h1>
-          <span onClick={setShow}>
-            <FaTimes />
+          <span className="text-[#1E1E1E80]" onClick={setShow}>
+            <FaTimes size={20} />
           </span>
         </div>
-        <p><span>Project Name :</span> <span>{show.name}</span></p>
-        <p><span>Roi :</span> <span>{show.roi}</span></p>
-        <p><span>On ₦100K Investment </span> <span>₦125,000 (₦25,000 profit)</span></p>
-        <form>
-            <label className="pr-3" htmlFor="amt">Investment Amount: 
-                
-            </label>
-            <input className=" border-[#C2C3C1] border-[1px] rounded px-2 py-1 placeholder: text-[#567416]" type="text" name="amt" id="amt" placeholder="Note : Minimum Amount - ₦50,000     " />
-            <div className="flex gap-3 py-1">
-            <input type="checkbox" name="confirm" id="confirm" />
-            <p>I confirm this amount will be deducted from my wallet</p>
-            </div>
-            
+        <p>Your investment of ₦100,000 on the Rice Farming Initiative project has been successfully processed..</p>
             <span className="w-full"><Button variant="tertiary" size="sm">Go back to Investment</Button></span>
             
-        </form>
+      
       </div>
     </div>
   )

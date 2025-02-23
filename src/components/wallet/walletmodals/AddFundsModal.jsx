@@ -9,8 +9,8 @@ const AddFundsModal = ({ setAddFunds, setConfirm }) => {
           <h2 className="text-lg text-[#6B911B] font-semibold">
             Add Funds to Your Wallet
           </h2>
-          <span onClick={setAddFunds}>
-            <FaTimes />
+          <span className="text-[#1E1E1E80]" onClick={setAddFunds}>
+            <FaTimes size={20}/>
           </span>
         </div>
         <hr className="py-2" />
@@ -25,8 +25,8 @@ const AddFundsModal = ({ setAddFunds, setConfirm }) => {
             Enter the Amount You Want to Add
           </label>
           <input
-            className="placeholder:text-[#B1B2B0] border-[1px] w-full py-2 border-[#C2C3C1] text-[14px] font-medium"
-            placeholder="E.g. ₦45,000"
+            className="placeholder:text-[#B1B2B0] border-[1px] my-2 w-full py-2 border-[#C2C3C1] text-[14px] font-medium"
+            placeholder="  E.g. ₦45,000"
             type="text"
             name=""
             id=""
@@ -34,7 +34,7 @@ const AddFundsModal = ({ setAddFunds, setConfirm }) => {
           <span className="text-[14px] font-medium text-[#567416]">
             Note : Minimum Amount - ₦20,000
           </span>
-          <p className="text-[#B1B2B0 text-[14px] font-medium]">
+          <p className="text-[#B1B2B0 text-[14px] py-2 font-medium]">
             Select Your Preferred Payment Method
           </p>
           <div className="flex flex-col space-y-1 py-2">
