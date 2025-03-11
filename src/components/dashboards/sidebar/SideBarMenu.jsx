@@ -1,11 +1,6 @@
-import React from "react";
 import investment from "../../../assets/investment.png";
 import overview from "../../../assets/overview.png";
-import handraise from "../../../assets/wave.png";
 import wallet from "../../../assets/wallet.png";
-import bell from "../../../assets/bell.png";
-import help from "../../../assets/help.png";
-import setting from "../../../assets/setting.png";
 import { NavLink } from "react-router-dom";
 
 const SideBarMenu = () => {
@@ -23,7 +18,7 @@ const SideBarMenu = () => {
               className={({ isActive }) =>
                 isActive ? "bg-[#0000001A] pl-[3px] pr-16 py-2 rounded-md" : ""
               }
-              to="/sidebar/overview"
+              to="overview"
             >
               {({ isActive }) => (
                 <>
@@ -44,7 +39,7 @@ const SideBarMenu = () => {
               className={({ isActive }) =>
                 isActive ? "bg-[#0000001A] pl-1 pr-6 py-2 rounded-md" : ""
               }
-              to="/sidebar/investments"
+              to="investments"
             >
               {({ isActive }) => (
                 <>
@@ -65,7 +60,7 @@ const SideBarMenu = () => {
               className={({ isActive }) =>
                 isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""
               }
-              to="/sidebar/wallet"
+              to="wallet"
             >
               {({ isActive }) => (
                 <>

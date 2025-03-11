@@ -10,18 +10,15 @@ const SideBarFooter = () => {
           <div className={`absolute left-[5px] h-8 $`}></div>
           <img src={setting} alt="invest" />
           <div className="font-sanns text-base font-medium">
-            <NavLink
-              
-              to="/sidebar/investments"
-            >
-                {({ isActive }) => (
-              <>
-                {isActive && (
-                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
-                )}
-                <span>Settings</span>
-              </>
-            )}
+            <NavLink to="/sidebar/settings">
+              {({ isActive }) => (
+                <>
+                  {isActive && (
+                    <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                  )}
+                  <span>Settings</span>
+                </>
+              )}
             </NavLink>
           </div>
         </div>
@@ -29,18 +26,15 @@ const SideBarFooter = () => {
           <div className={`absolute left-[5px] h-8 $  `}></div>
           <img src={help} alt="help" />
           <div className="font-sanns text-base font-medium">
-            <NavLink
-              
-              to="/sidebar/investments"
-            >
-                {({ isActive }) => (
-              <>
-                {isActive && (
-                  <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
-                )}
-                <span>Help & Support</span>
-              </>
-            )}
+            <NavLink to="/sidebar/help">
+              {({ isActive }) => (
+                <>
+                  {isActive && (
+                    <div className="absolute left-[-6px] top-0 h-8 w-1 bg-[#6B911B]"></div>
+                  )}
+                  <span>Help & Support</span>
+                </>
+              )}
             </NavLink>
           </div>
         </div>

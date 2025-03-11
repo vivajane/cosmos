@@ -61,7 +61,7 @@ const TableOverview = () => {
                         <td>
                             <span className={ `px-4 py-1 rounded-md ${table.color}`}>{table.status}</span>
                         </td>
-                        <td>{table.amount}</td>
+                        <td>₦{table.amount}</td>
                         <td className='px-2 py-4 ml-2'>{table.roi}</td>
                         <td>{table.date}</td>
                         

@@ -89,7 +89,7 @@ const WalletOverview = () => {
             <OverFlowProps
               key={wallet.id}
               title={wallet.title}
-              balance={wallet.balance}
+              balance= {wallet.balance}
             />
           </li>
         ))}

@@ -16,6 +16,10 @@ import UserDashboard from "./components/dashboards/userDashboard/UserDashboard";
 import Investment from "./pages/Investment";
 import Wallet from "./pages/Wallet";
 import NewProject from "./pages/NewProject";
+import Setting from "./pages/Setting";
+import Profile from "./components/settings/profile/Profile";
+import Notification from "./components/settings/notification/Notification";
+import Billings from "./components/settings/billing/Billings";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -58,6 +62,12 @@ function App() {
                 <Route path="projects" element={<NewProject />} />
               </Route>
               <Route path="wallet" element={<Wallet />} />
+              <Route path="settings" element={<Setting />}>
+                <Route index element={<Profile />} />
+                <Route path="profile" element={<Profile />} />
+                <Route path="notifications" element={<Notification />} />
+                <Route path="billing" element={<Billings />} />
+              </Route>
             </Route>
           </Routes>
         </Layout>

@@ -6,7 +6,7 @@ const wallets = [
   {
     date: "Jan 05, 2025",
     trans: "TXN12456780",
-    type: "credit",
+    type: "Credit",
     desc: "ROI from Soybean Cycle 3",
     // color: "text-[#02487A] bg-[#E2F1FC]",
     amount: 100000,
@@ -24,7 +24,7 @@ const wallets = [
   {
     date: "Mar 01, 2025",
     trans: "TXN12456780",
-    type: "credit",
+    type: "Credit",
     desc: "Wallet Deposit",
     // color: "text-[#02487A] bg-[#E2F1FC]",
     amount: 170000,
@@ -42,7 +42,7 @@ const wallets = [
   {
     date: "Jan 05, 2025",
     trans: "TXN12456130",
-    type: "credit",
+    type: "Credit",
     desc: "Withdrawal to Bank Account",
     // color: "text-[#02487A] bg-[#E2F1FC]",
     amount: 100000,
@@ -51,7 +51,7 @@ const wallets = [
   {
     date: "Sep 25, 2025",
     trans: "TXN12456780",
-    type: "credit",
+    type: "Credit",
     desc: "Refund from Delayed Projec",
     // color: "text-[#02487A] bg-[#E2F1FC]",
     amount: 800000,
@@ -60,7 +60,7 @@ const wallets = [
   {
     date: "Jan 05, 2025",
     trans: "TXN12456780",
-    type: "credit",
+    type: "Credit",
     desc: "Withdrawal to Bank Accoun",
     // color: "text-[#02487A] bg-[#E2F1FC]",
     amount: 300000,
@@ -116,7 +116,7 @@ const WalletTable = () => {
                   {data.desc}
                 </td>
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.amount}
+                ₦{data.amount}
                 </td>
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
                   <span

@@ -121,9 +121,8 @@ const InvestmentPorfolio = () => {
                   {data.status}
                 </span>
               </td>
-
               <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                {data.amount}
+              ₦{data.amount}
               </td>
               <td className="font-sanns font-normal text-sm text-[#4F5144]">
                 {data.roi}
