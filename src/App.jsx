@@ -20,6 +20,9 @@ import Setting from "./pages/Setting";
 import Profile from "./components/settings/profile/Profile";
 import Notification from "./components/settings/notification/Notification";
 import Billings from "./components/settings/billing/Billings";
+import AdminSideBar from "./pages/AdminSideBar";
+import AdminDashBoard from "./pages/AdminDashBoard";
+import AdminDashBoardMain from "./components/adminDashboard/AdminDashboards/AdminDashBoardMain";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -28,7 +31,8 @@ const Layout = ({ children }) => {
     location.pathname.includes("/signup") ||
     location.pathname.includes("/forgotpassword") ||
     location.pathname.includes("/sidebar") ||
-    location.pathname.includes("/userDashboard");
+    location.pathname.includes("/adminSidebar");
+  location.pathname.includes("/userDashboard");
   return (
     <div>
       {!hideHeaderFooter && <Header />}
@@ -68,6 +72,13 @@ function App() {
                 <Route path="notifications" element={<Notification />} />
                 <Route path="billing" element={<Billings />} />
               </Route>
+            </Route>
+            <Route path="adminSidebar" element={<AdminSideBar />}>
+            <Route index element={<AdminDashBoard />} />
+            <Route path="adminDashboard" element={<AdminDashBoard />} />
+            {/* add your own routes here */}
+
+        
             </Route>
           </Routes>
         </Layout>

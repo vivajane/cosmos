@@ -8,7 +8,7 @@ const LoginForm = () => {
 
     const onSubmitHandler = (e) => {
       e.preventDefault();
-      navigate("/sidebar");
+      navigate("/adminSidebar");
     }
 
     const nextForget = ()=> {
