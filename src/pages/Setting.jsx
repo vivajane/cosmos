@@ -15,7 +15,7 @@ const Setting = () => {
           
 
         </div>
-        <div className="border-[1px] m-4 mt-[70px] border-[#E3E3E3]">
+        <div className="border rounded-md m-4 mt-[70px] border-[#E3E3E3]">
         <Outlet />
         </div>
       </div>
