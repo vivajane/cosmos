@@ -45,6 +45,7 @@ const CardModal = ({setCard}) => {
                   name="holder"
                   id=""
                 />
+                
   
                 <div>
                   <label

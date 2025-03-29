@@ -23,6 +23,9 @@ import Billings from "./components/settings/billing/Billings";
 import AdminSideBar from "./pages/AdminSideBar";
 import AdminDashBoard from "./pages/AdminDashBoard";
 import AdminDashBoardMain from "./components/adminDashboard/AdminDashboards/AdminDashBoardMain";
+import Help from "./pages/Help";
+import ContactSupport from "./components/helpSupport/ContactSupport";
+import DirectContactLink from "./components/helpSupport/DirectContactLink";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -72,13 +75,16 @@ function App() {
                 <Route path="notifications" element={<Notification />} />
                 <Route path="billing" element={<Billings />} />
               </Route>
+              <Route path="help" element={<Help />}>
+                <Route index element={<ContactSupport />}/>
+                <Route path="support" element={<ContactSupport />} />
+                <Route path="direct" element={<DirectContactLink />} />
+              </Route>
             </Route>
             <Route path="adminSidebar" element={<AdminSideBar />}>
-            <Route index element={<AdminDashBoard />} />
-            <Route path="adminDashboard" element={<AdminDashBoard />} />
-            {/* add your own routes here */}
-
-        
+              <Route index element={<AdminDashBoard />} />
+              <Route path="adminDashboard" element={<AdminDashBoard />} />
+              {/* add your own routes here */}
             </Route>
           </Routes>
         </Layout>

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Notification = () => {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
 
   return (
     <div>
