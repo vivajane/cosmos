@@ -44,16 +44,18 @@ const AdminSideBarMenu = () => {
             </div>
           </div>
           {showIssue && (
-            <NavLink
+           <div className="my-8 mx-2">
+             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#0000001A] pl-1 pr-3 py-2 my-3 rounded-md"
+                  ? "bg-[#0000001A] pl-1 pr-2  py-2 my-6 rounded-md"
                   : "my-6"
               }
               to="/adminSideBar/adminDashboard/issuepage"
             >
               Issue Management
             </NavLink>
+           </div>
           )}
         </div>
         <div className="flex items-center relative  gap-2">

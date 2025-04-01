@@ -96,6 +96,7 @@ function App() {
             <Route path="adminSidebar" element={<AdminSideBar />}>
               <Route index element={<AdminDashBoard />}></Route>
               <Route path="adminDashboard" element={<AdminDashBoard />}>
+                <Route index element={<IssueMPage />} />
                 <Route path="issuepage" element={<IssueMPage />}>
                   <Route index element={<ActiveUsers />} />
                   <Route path="activeusers" element={<ActiveUsers />} />

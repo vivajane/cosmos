@@ -8,64 +8,67 @@ const overviewdata = [
     id: 1,
     regno: "78901",
     username: "Piper Mills",
-    email: "pipper@gmail.com",
-    niv: "20",
+    status: "Active",
+    type: "Cassave Issues",
     date: "Jan 05 2025",
   },
   {
     id: 2,
     regno: "85921",
     username: "Healther Green",
-    email: "green@gmail.com",
-    niv: "10",
+    status: "Active",
+    type: "Rice Issues",
     date: "Feb 07 2024",
   },
   {
     id: 3,
     regno: "92301",
     username: "Adam Eden",
-    email: "adam@gmail.com",
-    niv: "40",
+    status: "Suspended",
+    type: "Cocoa Issues",
     date: "Sep 01 2025",
   },
   {
     id: 4,
     regno: "28901",
     username: "Ryan Mills",
-    email: "ryan@gmail.com",
-    niv: "50",
+    status: "Active",
+    type: "Maize Issues",
     date: "Sep 05 2025",
   },
   {
     id: 5,
     regno: "10901",
     username: "Yolanda Mills",
-    email: "yols@gmail.com",
-    niv: "60",
+    status: "Suspended",
+    type: "Bean Issues",
     date: "Dec 05 2025",
   },
   {
     id: 6,
     regno: "98901",
     username: "Healther Green",
-    email: "green@gmail.com",
-    niv: "20",
+    status: "Active",
+    type: "Rice Issues",
+   
     date: "Aug 05 2025",
   },
   {
     id: 7,
     regno: "98903",
     username: "Edward Mills",
-    email: "edward@gmail.com",
-    niv: "20",
+    status: "Pending",
+    type: "Maize Issues",
+   
     date: "Jan 05 2025",
   },
   {
     id: 8,
     regno: "14908",
     username: "Yack Hills",
-    email: "yack@gmail.com",
-    niv: "70",
+    status: "Active",
+    type: "Maize Issues",
+    
     date: "Jan 07 2026",
   },
 ];
@@ -80,13 +83,13 @@ const ActiveUsers = () => {
         <table>
           <thead className=" py-2 border-b text-[#00000080] ">
             <tr className="font-sans border-b font-medium text-sm">
-              <th className=" py-2 w-1/12 text-left"></th>
-              <th className=" py-2 w-1/8 text-left">REG NO</th>
-              <th className=" py-2 w-1/8 text-left">USER NAME</th>
-              <th className=" py-2 w-1/12 text-left">USER EMAIL</th>
-              <th className=" py-2 w-1/8 text-left"># OF NIV</th>
-              <th className=" py-2 w-1/6 text-left">DATE REGISTERED</th>
-              <th className=" py-2 w-1/6 text-left">DOCUMENTS</th>
+              <th className=" py-2 w-1/18 text-left"></th>
+              <th className=" py-2 w-1/6 text-left">ISSUE NO</th>
+              <th className=" py-2 w-1/14 text-left">REPORTER NAME</th>
+              <th className=" py-2 w-1/8 text-left">REPORTER STATUS</th>
+              <th className=" py-2 w-1/6 text-left">ISSUE TYPE </th>
+              <th className=" py-2 w-1/12 text-left">DATE</th>
+              <th className=" py-2 w-1/18 text-left"></th>
             </tr>
           </thead>
 
@@ -103,10 +106,22 @@ const ActiveUsers = () => {
                   {data.regno}
                 </td>
                 <td>{data.username}</td>
-                <td className="font-sanns font-normal text-sm text-black">
-                  {data.email}
+                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                  <span
+                    className={`${
+                      data.status === "active"
+                        ? "text-[#E2F1FC] bg-[#02487A]"
+                        : data.status === "completed"
+                        ? "text-[#027A48] bg-[#ECFDF3]"
+                        : data.status === "pending"
+                        ? "text-[#713F12] bg-[#FEF9C3]"
+                        : "text-gray-500 bg-gray-200"
+                    } px-2 py-1 rounded-md`}
+                  >
+                    {data.status}
+                  </span>
                 </td>
-                <td className="font-sanns font-normal text-sm ">{data.niv}</td>
+                <td className="font-sanns font-normal text-sm ">{data.type}</td>
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
                   {data.date}
                 </td>

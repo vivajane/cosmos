@@ -5,116 +5,132 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 
 const wallets = [
     {
-      date: "Jan 05, 2025",
-      trans: "TXN12456780",
-      type: "Credit",
+        id:1,
+      name: "John Doe",
       desc: "ROI from Soybean Cycle 3",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 100000,
-      status: "completed",
-    },
-    {
-      date: "Feb 07, 2025",
-      trans: "TXN12456578",
-      type: "Debit",
-      desc: "Investment in Maize Project",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 500000,
-      status: "pending",
-    },
-    {
-      date: "Mar 01, 2025",
-      trans: "TXN12456780",
-      type: "Credit",
-      desc: "Wallet Deposit",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 170000,
-      status: "completed",
-    },
-    {
+      Amount: 100000,
+      expectedRoi: 20,
       date: "Jan 05, 2025",
-      trans: "TXN12456760",
-      type: "Debit",
-      desc: "Wallet Bonus (New Milestone)",
+      status: "Completed",
+      
       // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 700000,
-      status: "completed",
     },
     {
+        id: 2,
+      name: "Jane Smith",
+      desc: "Rice Platform",
+      Amount: 200000,
+      expectedRoi: 20,
+      date: "Feb 08, 2025",
+      status: "Pending",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
+    },
+    {
+        id:3,
+      name: "   David Johnson",
+      desc: "Cocoa Season",
+      Amount: 100000,
+      expectedRoi: 20,
+      date: "Mar 09, 2025",
+      status: "Completed",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
+    },
+    {
+        id:4,
+      name: "Sarah Williams",
+      desc: "Cassava Cycle",
+      Amount: 100000,
+      expectedRoi: 5,
+      date: "April 05, 2025",
+      status: "Active",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
+    },
+    {
+        id:5,
+      name: "Micheal Brown",
+      desc: "Tomato Project",
+      Amount: 100000,
+      expectedRoi: 5,
       date: "Jan 05, 2025",
-      trans: "TXN12456130",
-      type: "Credit",
-      desc: "Withdrawal to Bank Account",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 100000,
-      status: "pending",
-    },
-    {
-      date: "Sep 25, 2025",
-      trans: "TXN12456780",
-      type: "Credit",
-      desc: "Refund from Delayed Projec",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 800000,
       status: "completed",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
     },
     {
+        id: 6,
+      name: "Tracy Okoro",
+      desc: "Bean Cycle",
+      Amount: 100000,
+      expectedRoi: 20,
       date: "Jan 05, 2025",
-      trans: "TXN12456780",
-      type: "Credit",
-      desc: "Withdrawal to Bank Accoun",
-      // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 300000,
       status: "completed",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
     },
     {
-      date: "Dec 11, 2025",
-      trans: "TXN12456110",
-      type: "Debit",
-      desc: "ROI from Rice Cycle",
+        id: 7,
+      name: "Akpan David",
+      desc: "Plabtain",
+      Amount: 100000,
+      expectedRoi: 20,
+      date: "Dec 05, 2025",
+      status: "Active",
+      
       // color: "text-[#02487A] bg-[#E2F1FC]",
-      amount: 100000,
-      status: "completed",
     },
+    {
+      name: "Ola Benson",
+      desc: "Pepper",
+      Amount: 100000,
+      expectedRoi: 20,
+      date: "Oct 05, 2025",
+      status: "Pending",
+      
+      // color: "text-[#02487A] bg-[#E2F1FC]",
+    },
+    
   ];
 const InvestmentBrd = () => {
   return (
     <div>
       <IssuePropsOverview name="All Investments"/>
       <div>
-      <table>
+      <table className='space-y-4'>
           <thead className="bg-[#0000000D] shadow-md">
-            <tr className="font-sans text-[#4F5144] font-medium text-sm">
-              <th className=" py-2 w-1/5 text-left">Date</th>
-              <th className=" py-2 w-1/6 text-left">Transaction ID</th>
-              <th className=" py-2 w-1/6 text-left">Type</th>
-              <th className=" py-2 w-1/5 text-left">Description</th>
-              <th className=" py-2 w-1/6 text-left">Amount</th>
-              <th className=" py-2 w-1/6 text-left">Status</th>
-              <th className=" py-2 w-1/6 text-left"></th>
+            <tr className="font-sans text-[]  font-medium text-sm">
+              <th className=" py-4 px-2 w-1/5 text-left">Investor Name</th>
+              <th className="  w-1/6 text-left">Project Name</th>
+              <th className="  w-1/6 text-left">Amount Invested</th>
+              <th className="  w-1/5 text-left">Expected Roi</th>
+              <th className="  w-1/6 text-left">Investment Date</th>
+              <th className="  w-1/6 text-left">Status</th>
+              <th className="  w-1/6 text-left"></th>
             </tr>
           </thead>
 
           <tbody>
             {wallets.map((data, index) => (
               <tr
-                className=" text-[#4F5144] space-y-8 text-sm font-normal border-b border-gray-300"
+                className=" text-[#4F5144] space-y-10 text-sm font-normal border-b border-gray-300"
                 key={index}
               >
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.date}
+                  {data.name}
                 </td>
-                <td className="font-sanns font-normal text-xs text-[#4F5144]">
-                  {data.trans}
-                </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.type}
-                </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                <td className="font-sanns font-normal text-[12px] text-[#4F5144]">
                   {data.desc}
                 </td>
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                ₦{data.amount}
+                  {data.Amount}
+                </td>
+                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                  {data.expectedRoi}
+                </td>
+                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                ₦{data.date}
                 </td>
                 <td className="font-sanns font-normal text-sm text-[#4F5144]">
                   <span
