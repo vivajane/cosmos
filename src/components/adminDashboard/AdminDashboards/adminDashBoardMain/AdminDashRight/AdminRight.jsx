@@ -10,6 +10,7 @@ import seven from "../../../../../assets/Framese.png"
 import eight from "../../../../../assets/Frameight.png"
 import nine from "../../../../../assets/Framenine.png"
 import Track from "./AdminTrack";
+import AdminCards from "./AdminCards";
 
 const tracks = [
   {
@@ -110,6 +111,7 @@ const tracks = [
 const AdminRight = () => {
   return (
     <div className="py-3 pl-4 border-l-[2px] border-[#00000012]">
+    <div><AdminCards/></div>
       <h1 className="font-sanns font-semibold text-base">Recent Activities</h1>
       <p className="font-sanns text-[#00000080] text-[13px] font-normal">
         5 new activities today
