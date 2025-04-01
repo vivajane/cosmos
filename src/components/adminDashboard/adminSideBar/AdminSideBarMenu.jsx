@@ -27,7 +27,7 @@ const AdminSideBarMenu = () => {
               <NavLink
                 className={({ isActive }) =>
                   isActive
-                    ? "bg-[#0000001A] pl-[3px] pr-16 py-2 rounded-md"
+                    ? "bg-[#0000001A] pl-[3px] pr-3 py-2 rounded-md"
                     : ""
                 }
                 to="adminDashboard"
@@ -47,7 +47,7 @@ const AdminSideBarMenu = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? "bg-[#0000001A] pl-1 pr-6 py-2 my-3 rounded-md"
+                  ? "bg-[#0000001A] pl-1 pr-3 py-2 my-3 rounded-md"
                   : "my-6"
               }
               to="/adminSideBar/adminDashboard/issuepage"
@@ -62,7 +62,7 @@ const AdminSideBarMenu = () => {
           <div className="font-sanns text-[#1E1E1E] text-base font-medium">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-[#0000001A] pl-1 pr-6 py-2 rounded-md" : ""
+                isActive ? "bg-[#0000001A] pl-1 pr-3 py-2 rounded-md" : ""
               }
               to="userManagement"
             >
@@ -83,7 +83,7 @@ const AdminSideBarMenu = () => {
           <div className="font-sanns text-base font-medium">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""
+                isActive ? "bg-[#0000001A] pl-1 pr-3 py-2 rounded-md" : ""
               }
               to="projects"
             >
@@ -105,7 +105,7 @@ const AdminSideBarMenu = () => {
           <div className="font-sanns text-base font-medium">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""
+                isActive ? "bg-[#0000001A] pl-1 pr-3 py-2 rounded-md" : ""
               }
               to="investments"
             >
@@ -126,7 +126,7 @@ const AdminSideBarMenu = () => {
           <div className="font-sanns text-base font-medium">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""
+                isActive ? "bg-[#0000001A] pl-1 pr-3 py-2 rounded-md" : ""
               }
               to="security"
             >
@@ -147,7 +147,7 @@ const AdminSideBarMenu = () => {
           <div className="font-sanns text-base font-medium">
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-[#0000001A] pl-1 pr-16 py-2 rounded-md" : ""
+                isActive ? "bg-[#0000001A] pl-1 pr-3 py-2 rounded-md" : ""
               }
               to="audit"
             >
