@@ -8,7 +8,7 @@ const AdminSideBarMenu = () => {
   const [showIssue, setShowIssue] = useState(false);
 
   const showIssuePage = () => {
-    setShowIssue(!showIssue);
+    setShowIssue((showIssue) => !showIssue);
   };
 
   return (

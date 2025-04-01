@@ -32,6 +32,8 @@ import SuspendedUsers from "./components/adminDashboard/AdminDashboards/IssueMan
 import Pending from "./components/adminDashboard/AdminDashboards/IssueManagement/Pending";
 import AdminProjects from "./components/adminDashboard/projects/AdminProjects";
 import AdminInvestment from "./components/adminDashboard/investments/Investment";
+import InvestmentBrd from "./components/adminDashboard/investments/InvestmentBrd";
+import FinanTrans from "./components/adminDashboard/investments/FinanTrans";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -41,6 +43,9 @@ const Layout = ({ children }) => {
     location.pathname.includes("/forgotpassword") ||
     location.pathname.includes("/sidebar") ||
     location.pathname.includes("/adminSidebar") ||
+    location.pathname.includes("/projects") ||
+    location.pathname.includes("/investments") ||
+
     location.pathname.includes("/adminDashboard");
   location.pathname.includes("/userDashboard");
   return (
@@ -98,8 +103,13 @@ function App() {
                   <Route path="pendingusers" element={<Pending />} />
                 </Route>
               </Route>
-              <Route path="projects" element={<AdminProjects/>}/>
-                <Route path="investments" element={<AdminInvestment/>}/>
+              <Route path="projects" element={<AdminProjects />} />
+              <Route path="investments" element={<AdminInvestment/>}>
+              <Route index element={<InvestmentBrd/>}/>
+              <Route path="investbrk" element={<InvestmentBrd/>}/>
+              <Route path="finantrans" element={<FinanTrans/>}/>
+            
+              </Route>
 
               {/* add your own routes here */}
             </Route>

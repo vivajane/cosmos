@@ -3,7 +3,7 @@ import { CiSearch } from "react-icons/ci";
 
 const IssuePropsOverview = ({name}) => {
   return (
-    <div className="flex py-4 justify-between gap-14 pb-4 items-center">
+    <div className="flex py-4 justify-between font-bold text-base gap-14 pb-4 items-center">
       <h1>{name}</h1>
       
       <div className="border-[1px] py-1 mt-3 border-[#00000026] flex-grow rounded flex items-center">
