@@ -2,7 +2,9 @@ import React from 'react'
 import InvestmentHeader from './InvestmentHeader'
 import InvestmentMetric from './InvestmentOverview'
 import IssueUsers from './InvestmentLinks'
-import Pagination from '../../investments/newprojects/Pagination'
+import AdminPagination from '../AdminPagination'
+
+
 
 const AdminInvestment = () => {
   return (
@@ -10,7 +12,7 @@ const AdminInvestment = () => {
       <InvestmentHeader/>
       <InvestmentMetric/>
       <IssueUsers/>
-      <Pagination/>
+      <AdminPagination/>
 
       
     </div>

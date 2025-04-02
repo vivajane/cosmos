@@ -1,7 +1,8 @@
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import IssuePropsOverview from "./IssuePropsOverview";
-import Pagination from "../../../investments/newprojects/Pagination";
+import AdminPagination from "../../AdminPagination";
+import { MdArrowOutward } from "react-icons/md";
 
 const overviewdata = [
   {
@@ -9,7 +10,7 @@ const overviewdata = [
     regno: "78901",
     username: "Piper Mills",
     status: "Active",
-    type: "Cassave Issues",
+    type: "Cassava Issues",
     date: "Jan 05 2025",
   },
   {
@@ -50,7 +51,6 @@ const overviewdata = [
     username: "Healther Green",
     status: "Active",
     type: "Rice Issues",
-   
     date: "Aug 05 2025",
   },
   {
@@ -59,7 +59,6 @@ const overviewdata = [
     username: "Edward Mills",
     status: "Pending",
     type: "Maize Issues",
-   
     date: "Jan 05 2025",
   },
   {
@@ -68,79 +67,71 @@ const overviewdata = [
     username: "Yack Hills",
     status: "Active",
     type: "Maize Issues",
-    
     date: "Jan 07 2026",
   },
 ];
 
 const ActiveUsers = () => {
   return (
-    <div>
-      <div className="">
-        <IssuePropsOverview name="Active Users" />
-      </div>
+    <div className="">
       <div>
-        <table>
-          <thead className=" py-2 border-b text-[#00000080] ">
-            <tr className="font-sans border-b font-medium text-sm">
-              <th className=" py-2 w-1/18 text-left"></th>
-              <th className=" py-2 w-1/6 text-left">ISSUE NO</th>
-              <th className=" py-2 w-1/14 text-left">REPORTER NAME</th>
-              <th className=" py-2 w-1/8 text-left">REPORTER STATUS</th>
-              <th className=" py-2 w-1/6 text-left">ISSUE TYPE </th>
-              <th className=" py-2 w-1/12 text-left">DATE</th>
-              <th className=" py-2 w-1/18 text-left"></th>
+        <IssuePropsOverview name="Active Accounts List" />
+      </div>
+
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse">
+          <thead className=" text-gray-700">
+            <tr className="font-medium text-sm">
+              <th className="py-3 px-4 text-left w-10">
+              </th>
+              <th className="py-3 px-4 text-left">ISSUE NO</th>
+              <th className="py-3 px-4 text-left">REPORTER NAME</th>
+              <th className="py-3 px-4 text-left">REPORTER STATUS</th>
+              <th className="py-3 px-4 text-left">ISSUE TYPE</th>
+              <th className="py-3 px-4 text-left">DATE</th>
+              <th className="py-3 px-4 text-left">Actions</th>
             </tr>
           </thead>
 
-          <tbody className="">
+          <tbody>
             {overviewdata.map((data, index) => (
               <tr
-                className=" text-[] space-y-8 text-sm font-normal border-b border-gray-300"
+                className="border-b border-gray-300 text-sm font-normal"
                 key={index}
               >
-                <td>
+                <td className="py-3 px-4">
                   <input type="checkbox" className="w-4 h-4" />
                 </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.regno}
-                </td>
-                <td>{data.username}</td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                <td className="py-3 px-4 text-gray-700">{data.regno}</td>
+                <td className="py-3 px-4 text-gray-700">{data.username}</td>
+                <td className="py-3 px-4">
                   <span
-                    className={`${
-                      data.status === "active"
-                        ? "text-[#E2F1FC] bg-[#02487A]"
-                        : data.status === "completed"
-                        ? "text-[#027A48] bg-[#ECFDF3]"
-                        : data.status === "pending"
-                        ? "text-[#713F12] bg-[#FEF9C3]"
-                        : "text-gray-500 bg-gray-200"
-                    } px-2 py-1 rounded-md`}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold 
+                      ${
+                        data.status === "Active"
+                          ? "text-green-700 bg-green-100"
+                          : data.status === "Suspended"
+                          ? "text-red-700 bg-red-100"
+                          : data.status === "Pending"
+                          ? "text-yellow-700 bg-yellow-100"
+                          : "text-gray-500 bg-gray-200"
+                      }`}
                   >
                     {data.status}
                   </span>
                 </td>
-                <td className="font-sanns font-normal text-sm ">{data.type}</td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.date}
+                <td className="py-3 px-4 text-gray-700">{data.type}</td>
+                <td className="py-3 px-4 text-gray-700">{data.date}</td>
+                <td className="py-3 px-4 flex items-center justify-between">
+                 <span><MdArrowOutward/></span>
                 </td>
-                <td className="font-sanns font-normal text-sm ">
-                  <button className="bg-[#E6E6E6] rounded-full text-[#000000] py-1 px-4 font-sans font-medium text-sm">
-                    View
-                  </button>
-                </td>
-
-                <div className="">
-                  <BsThreeDotsVertical className="" />
-                </div>
               </tr>
             ))}
-            <tr></tr>
           </tbody>
         </table>
       </div>
-      <Pagination/>
+
+      <AdminPagination />
     </div>
   );
 };

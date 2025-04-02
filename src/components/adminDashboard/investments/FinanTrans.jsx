@@ -99,7 +99,7 @@ const FinanTrans = () => {
       <IssuePropsOverview name="All Transactions" />
       <div>
         <table className="space-y-4">
-          <thead className="bg-[#0000000D] shadow-md">
+          <thead className="">
             <tr className="font-sans text-[]  font-medium text-sm">
               <th className=" py-4 px-2 w-1/5 text-left">Transaction ID</th>
               <th className="  w-1/6 text-left">User Name</th>

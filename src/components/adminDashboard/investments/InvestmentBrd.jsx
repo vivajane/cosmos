@@ -99,7 +99,7 @@ const InvestmentBrd = () => {
       <IssuePropsOverview name="All Investments"/>
       <div>
       <table className='space-y-4'>
-          <thead className="bg-[#0000000D] shadow-md">
+          <thead className="">
             <tr className="font-sans text-[]  font-medium text-sm">
               <th className=" py-4 px-2 w-1/5 text-left">Investor Name</th>
               <th className="  w-1/6 text-left">Project Name</th>

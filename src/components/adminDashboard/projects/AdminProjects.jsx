@@ -4,7 +4,9 @@ import ProjectsMetric from "./ProjectsMetric";
 // import ProjectOverview from "../../dashboards/metrics/ProjectOverview";
 import IssuePropsOverview from "../AdminDashboards/IssueManagement/IssuePropsOverview";
 import ProjectsTable from "./ProjectsTable";
-import Pagination from "../../investments/newprojects/Pagination";
+import AdminPagination from "../AdminPagination";
+
+
 
 
 const AdminProjects = () => {
@@ -14,7 +16,7 @@ const AdminProjects = () => {
       <ProjectsMetric/>
       <IssuePropsOverview name="All Projects"/>
       <ProjectsTable/>
-      <Pagination/>
+      <AdminPagination/>
       
 
       
