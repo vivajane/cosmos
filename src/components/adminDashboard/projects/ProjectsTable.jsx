@@ -117,9 +117,9 @@ const ProjectsTable = () => {
                     data.status === "active"
                       ? "text-white bg-blue-600"
                       : data.status === "completed"
-                      ? "text-green-700 bg-green-200"
+                      ? "text-[#027A48] bg-[#ECFDF3]"
                       : data.status === "pending"
-                      ? "text-yellow-700 bg-yellow-200"
+                      ? "text-[#713F12] bg-[#FEF9C3]"
                       : "text-gray-500 bg-gray-200"
                   }`}
                 >

@@ -1,6 +1,7 @@
 import React from "react";
-import IssuePropsOverview from "../AdminDashboards/IssueManagement/IssuePropsOverview";
+
 import { BsThreeDotsVertical } from "react-icons/bs";
+import AdminIssuePropsOverview from "./AdminIssueProps";
 
 const wallets = [
   {
@@ -91,48 +92,49 @@ const wallets = [
 
     // color: "text-[#02487A] bg-[#E2F1FC]",
   },
-  
 ];
 const FinanTrans = () => {
   return (
     <div>
-      <IssuePropsOverview name="All Transactions" />
+      <AdminIssuePropsOverview name="All Transactions" />
       <div>
-        <table className="space-y-4">
+        <table className="space-y-4 table-auto w-full border-collapse">
           <thead className="">
             <tr className="font-sans text-[]  font-medium text-sm">
-              <th className=" py-4 px-2 w-1/5 text-left">Transaction ID</th>
-              <th className="  w-1/6 text-left">User Name</th>
-              <th className="  w-1/6 text-left">Transaction Type</th>
-              <th className="  w-1/5 text-left">Amount</th>
-              <th className="  w-1/6 text-left"> Date</th>
-              <th className="  w-1/6 text-left">Status</th>
-              <th className="  w-1/6 text-left"></th>
+              <th className=" py-2 px-2 text-left">Transaction ID</th>
+              <th className="px-4 text-left">User Name</th>
+              <th className="px-4 text-left">Transaction Type</th>
+              <th className="px-4 text-left">Amount</th>
+              <th className="px-4 text-left"> Date</th>
+              <th className="px-4 text-left">Status</th>
+              <th className="px-4 text-left"></th>
             </tr>
           </thead>
 
           <tbody>
             {wallets.map((data, index) => (
               <tr
-                className=" text-[#4F5144] space-y-10 text-sm font-normal border-b border-gray-300"
+                className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
                 key={index}
               >
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                <td className="font-sanns px-3 py-4 font-normal text-sm text-[#4F5144]">
                   {data.transId}
                 </td>
-                <td className="font-sanns font-normal text-[12px] text-[#4F5144]">
+                <td className="font-sanns px-3 font-normal text-[12px] text-[#4F5144]">
                   {data.name}
                 </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
                   {data.tranType}
                 </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  {data.Amount}
+                <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
+                ₦{data.Amount.toLocaleString()}
+                
+        
                 </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
-                  ₦{data.date}
+                <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
+                  {data.date}
                 </td>
-                <td className="font-sanns font-normal text-sm text-[#4F5144]">
+                <td className="font-sanns font-normal px-2s text-sm text-[#4F5144]">
                   <span
                     className={`${
                       data.status === "Success"
@@ -145,7 +147,8 @@ const FinanTrans = () => {
                     {data.status}
                   </span>
                 </td>
-                <BsThreeDotsVertical className="" />
+                <div className="px-4 py-5"><BsThreeDotsVertical /></div>
+                
               </tr>
             ))}
             <tr></tr>
