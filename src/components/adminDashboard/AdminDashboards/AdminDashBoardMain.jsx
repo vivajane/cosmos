@@ -8,7 +8,7 @@ const AdminDashBoardMain = () => {
     <div className="grid grid-cols-[3fr_1fr] gap-4">
       <AdminContainer/>
       <AdminDashBoardRight/>
-      <AdminUserOverview/>
+      {/* <AdminUserOverview/> */}
     </div>
   )
 }

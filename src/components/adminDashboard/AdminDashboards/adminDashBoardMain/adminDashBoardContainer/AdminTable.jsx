@@ -1,21 +1,22 @@
 import React from 'react'
+import { MdArrowForward, MdArrowOutward } from "react-icons/md";
 
 const tables = [
     {
         id: 1,
         name:"April Dave",
         email: "april@gmail",
-        status: "active",
+        status: "Active",
         amount:100000,
         // roi: 20,
-        color: "text-[#02487A] bg-[#E2F1FC]",
+        color: "text-[#027A48] bg-[#ECFDF3]",
         date: "Jan 05 2025"
     },
     {
         id: 2,
         name:"Rice Black",
         email: "rice@gmail",
-        status: "Completed",
+        status: "Suspended",
         amount:150000,
         // roi: 25,
         color: "text-[#7A0204] bg-[#FEE2D5]",
@@ -25,7 +26,7 @@ const tables = [
         id: 3,
         name:"Cocoa Shean",
         email: "cocoa@gmail",
-        status: "pending",
+        status: "Pending",
         amount:50000,
         // roi: 15,
         color: "text-[#713F12] bg-[#FEF9C3]",
@@ -35,7 +36,7 @@ const tables = [
         id: 4,
         name:"Cassava Nton",
         email: "cassa@gmail",
-        status: "completed",
+        status: "Suspended",
         amount:200000,
         // roi: 18,
         color: "text-[#027A48] bg-[#ECFDF3]",
@@ -45,7 +46,7 @@ const tables = [
         id: 5,
         name:"Adeolu Nelson",
         email: "adeolu@gmail",
-        status: "completed",
+        status: "Suspended",
         amount:200000,
         // roi: 18,
         color: "text-[#027A48] bg-[#ECFDF3]",
@@ -55,7 +56,7 @@ const tables = [
         id: 6,
         name:"Bean Kyle",
         email: "bean@gmail",
-        status: "completed",
+        status: "Suspended",
         amount:200000,
         // roi: 18,
         color: "text-[#027A48] bg-[#ECFDF3]",
@@ -65,7 +66,7 @@ const tables = [
         id: 7,
         name:"Peter Cass",
         email: "peter@gmail",
-        status: "completed",
+        status: "Suspended",
         amount:200000,
         // roi: 18,
         color: "text-[#7A0204] bg-[#FEE2D5]",
@@ -75,7 +76,7 @@ const tables = [
         id: 8,
         name:"Piper Mill",
         email: "cassa@gmail",
-        status: "completed",
+        status: "Suspended",
         amount:200000,
         // roi: 18,
         color: "text-[#027A48] bg-[#ECFDF3]",
@@ -88,7 +89,7 @@ const AdminTableOverview = () => {
   return (
     <div className='py-6 overflow-x-auto px-4 '>
       <table className='min-w-full table-fixed'>
-        <thead className='bg-[#0000000D] shadow-md'>
+        <thead className='bg-[#FCFCFC]'>
             <tr className='font-sans text-[#4F5144] font-medium text-sm'>
                 <th className=' py-2 w-1/4 text-left'>  USER NAME</th>
                 <th className=' py-2 w-1/6 text-left'>USER EMAIL</th>
@@ -110,6 +111,9 @@ const AdminTableOverview = () => {
                         <td>₦{table.amount}</td>
                         <td className='px-2 py-4 ml-2'>{table.date}</td>
                         {/* <td>{table.date}</td> */}
+                        <td>
+                            <MdArrowOutward/>
+                        </td>
                         
 
                     </tr>
