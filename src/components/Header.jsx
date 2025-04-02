@@ -86,14 +86,14 @@ const Header = () => {
           {navbars.map((navbar) => (
             <li
               onClick={onCloseHandler}
-              className="text-blacky mt-12 py-8 font-normal px-2 sm:text-sm lg:text-base"
+              className="text-blacky mt-12  font-normal px-2 sm:text-sm lg:text-base"
               key={navbar.id}
             >
               <Navbar navbar={navbar} />
             </li>
           ))}
           <div className="px-8 ">
-            <div className="">
+            <div className="py-2">
               <Button onClick={() => navigate("/login")} variant="login" size="sm">
                 Login
               </Button>

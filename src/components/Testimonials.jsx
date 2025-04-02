@@ -29,14 +29,14 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="bg-bgFoot bg-no-repeat relative h-[373px] bg-cover flex flex-col items-center justify-center lg:mb-72 md:mb-[660px] mb-[890px] sm:mb-[650px] ">
-      <h1 className="font-semibold text-4xl font-sanns text-black text-center pt">
+      <h1 className="font-semibold text-4xl font-sanns text-black text-center ">
         Testimonials
       </h1>
-      <p className="text-base py-2 font-medium text-black font-sanns text-center">
+      <p className="text-base py-2 font-medium text-black font-sanns pb-24 md:pb-0 text-center">
         Stories of Growth Through Funding
       </p>
       <div className="absolute mx-auto md:px-16 px-8 lg:px-28 top-2/3 pb-11 ">
-        <ul className="lg:flex sm:grid sm:grid-cols-2 grid-cols-1 items-center justify-center gap-8">
+        <ul className="lg:flex sm:grid sm:grid-cols-2 space-y-4 md:space-y-0 grid-cols-1 items-center justify-center gap-8">
           {testimonials.map((testimonial) => (
             <Testimonial
               key={testimonial.id}
