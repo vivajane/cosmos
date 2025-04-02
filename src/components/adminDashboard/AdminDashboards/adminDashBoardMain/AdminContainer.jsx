@@ -4,7 +4,9 @@ import AdminInFlow from './adminDashBoardContainer/AdminInFlow'
 import AdminGraph from './adminDashBoardContainer/AdminGraph'
 import AdminTableOverview from './adminDashBoardContainer/AdminTable'
 import AdminUserOverview from './adminDashBoardContainer/AdminUserOverview'
-import AdminPagination from './adminDashBoardContainer/AdminPagination'
+import AdminPagination from '../../AdminPagination'
+import Pagination from '../../../investments/newprojects/Pagination'
+
 
 
 const AdminContainer = () => {
@@ -18,7 +20,8 @@ const AdminContainer = () => {
       </div>
       <AdminUserOverview/>
       <AdminTableOverview/>
-      <AdminPagination/>
+      {/* <AdminPagination/> */}
+      <Pagination/>
     
       
     </div>
