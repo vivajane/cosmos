@@ -29,7 +29,7 @@ const cards = [
       color: "bg-[#0000001A] text-[#121A71]"
     },
   ];
-const AdminCards = () => {
+const AdminCards = ({showUserType, setShowUserType}) => {
   return (
     <div className=''>
     <div className={`grid mb-10 grid-cols-2 text-xs gap-4`}>
@@ -40,7 +40,7 @@ const AdminCards = () => {
       }
     </div>
     <div className='pb-6'>
-      <Button variant="submitt">View All Users</Button>
+      <Button onClick={() => setShowUserType(true)} variant="submitt">View All Users</Button>
     </div>
     </div>
   )

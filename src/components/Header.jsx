@@ -5,9 +5,7 @@ import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/growlogo.svg"
-
-
+import logo from "../assets/growlogo.svg";
 
 const navbars = [
   {
@@ -33,7 +31,7 @@ const navbars = [
 ];
 
 const Header = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const onClickHandler = () => {
@@ -43,7 +41,6 @@ const Header = () => {
     setOpen(false);
   };
 
-  
   return (
     <header
       className={`relative font-inter py-4 font-sans text-base font-medium justify-between pt-4  ${
@@ -54,7 +51,9 @@ const Header = () => {
         className={`flex justify-between items-center py-1 bg-header lg:px-28 sm:px-18 px-8 `}
       >
         <div className="font-sanns text-blacky font-medium text-[28px] sm:[30px] md:text-[40px] lg:text-[48px] leading-[60px]">
-          <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
+          <NavLink to="/">
+            <img src={logo} alt="logo" />
+          </NavLink>
         </div>
         <div className="md:hidden block" onClick={onClickHandler}>
           {open ? <FaTimes /> : <IoMdMenu />}
@@ -73,12 +72,17 @@ const Header = () => {
           <Button onClick={() => navigate("/login")} variant="login" size="sm">
             Login
           </Button>
-          <Button onClick={() => navigate("/signup")} variant="signup" size="sm">
+          <Button
+            onClick={() => navigate("/signup")}
+            variant="signup"
+            size="sm"
+          >
             Sign up
           </Button>
         </div>
 
-        <ul onClick={onCloseHandler}
+        <ul
+          onClick={onCloseHandler}
           className={`w-full absolute top-16 h-screen gap-2 text-center flex flex-col  mt-2 overflow-hidden ${
             open ? "bg-graybg inset-0 " : "hidden"
           }`}
@@ -94,12 +98,20 @@ const Header = () => {
           ))}
           <div className="px-8 ">
             <div className="py-2">
-              <Button onClick={() => navigate("/login")} variant="login" size="sm">
+              <Button
+                onClick={() => navigate("/login")}
+                variant="login"
+                size="sm"
+              >
                 Login
               </Button>
             </div>
             <div className="mt-4">
-              <Button onClick={() => navigate("/signup")} variant="signup" size="sm">
+              <Button
+                onClick={() => navigate("/signup")}
+                variant="signup"
+                size="sm"
+              >
                 Sign up
               </Button>
             </div>
