@@ -4,7 +4,7 @@ import AdminRight from './AdminDashRight/AdminRight'
 const AdminDashBoardRight = ({showUserType, setShowUserType}) => {
   return (
     <div>
-        <AdminRight showUserType={showUserType} setShowUserType={setShowUserType}/>
+        <AdminRight showUserType={showUserType}  setShowUserType={setShowUserType}/>
       
     </div>
   )

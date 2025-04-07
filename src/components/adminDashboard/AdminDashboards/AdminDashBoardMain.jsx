@@ -7,7 +7,7 @@ const AdminDashBoardMain = ({showUserType, setShowUserType}) => {
   return (
     <div className="grid grid-cols-[3fr_1fr] gap-4">
       <AdminContainer/>
-      <AdminDashBoardRight showUserType={showUserType} setShowUserType={setShowUserType}/>
+      <AdminDashBoardRight showUserType={showUserType}  setShowUserType={setShowUserType}/>
       {/* <AdminUserOverview/> */}
     </div>
   )
