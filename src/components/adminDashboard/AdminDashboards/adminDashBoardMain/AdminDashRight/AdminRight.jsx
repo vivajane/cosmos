@@ -111,7 +111,7 @@ const tracks = [
 const AdminRight = ({showUserType, setShowUserType}) => {
   return (
     <div className="py-3 pl-4 border-l-[2px] border-[#00000012]">
-    <div><AdminCards showUserType={showUserType} setShowUserType={setShowUserType}/></div>
+    <div><AdminCards showUserType={showUserType} setShowUserType={setShowUserType} /></div>
       <h1 className="font-sanns font-semibold text-base">Recent Activities</h1>
       <p className="font-sanns text-[#00000080] text-[13px] font-normal">
         5 new activities today
