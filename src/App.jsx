@@ -38,16 +38,15 @@ import FinanTrans from "./components/adminDashboard/investments/FinanTrans";
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter =
-    location.pathname.includes("/login") ||
+    location.pathname.includes("/login") ||  
     location.pathname.includes("/signup") ||
     location.pathname.includes("/forgotpassword") ||
     location.pathname.includes("/sidebar") ||
     location.pathname.includes("/adminSidebar") ||
     location.pathname.includes("/projects") ||
     location.pathname.includes("/investments") ||
-
     location.pathname.includes("/adminDashboard");
-  location.pathname.includes("/userDashboard");
+    location.pathname.includes("/userDashboard");
   return (
     <div>
       {!hideHeaderFooter && <Header />}
