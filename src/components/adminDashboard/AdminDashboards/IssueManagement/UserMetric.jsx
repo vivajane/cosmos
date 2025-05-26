@@ -9,12 +9,12 @@ const issues = [
         balance:10344,
     },
     {
-        id:1,
+        id:2,
         title:"PENDING VERIFICATION",
         balance: 1234,
     },
     {
-        id:1,
+        id:3,
         title:"SUSPENDED USERS",
         balance: 10
     },

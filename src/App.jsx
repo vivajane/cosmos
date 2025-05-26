@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -34,11 +34,11 @@ import AdminProjects from "./components/adminDashboard/projects/AdminProjects";
 import AdminInvestment from "./components/adminDashboard/investments/Investment";
 import InvestmentBrd from "./components/adminDashboard/investments/InvestmentBrd";
 import FinanTrans from "./components/adminDashboard/investments/FinanTrans";
-
+import IssueUsers from "./components/adminDashboard/AdminDashboards/IssueManagement/IssueUsers";
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter =
-    location.pathname.includes("/login") ||  
+    location.pathname.includes("/login") ||
     location.pathname.includes("/signup") ||
     location.pathname.includes("/forgotpassword") ||
     location.pathname.includes("/sidebar") ||
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
     location.pathname.includes("/projects") ||
     location.pathname.includes("/investments") ||
     location.pathname.includes("/adminDashboard");
-    location.pathname.includes("/userDashboard");
+  location.pathname.includes("/userDashboard");
   return (
     <div>
       {!hideHeaderFooter && <Header />}
@@ -95,23 +95,25 @@ function App() {
             <Route path="adminSidebar" element={<AdminSideBar />}>
               <Route index element={<AdminDashBoard />}></Route>
               <Route path="adminDashboard" element={<AdminDashBoard />}>
-                <Route index element={<IssueMPage />} />
                 <Route path="issuepage" element={<IssueMPage />}>
-                  <Route index element={<ActiveUsers />} />
-                  <Route path="activeusers" element={<ActiveUsers />} />
-                  <Route path="suspendedusers" element={<SuspendedUsers />} />
-                  <Route path="pendingusers" element={<Pending />} />
+                  <Route
+                    index
+                    element={<Navigate to="issueusers/activeusers" />}
+                  />
+                  <Route path="issueusers" element={<IssueUsers />}>
+                    <Route index element={<Navigate to="activeusers" />} />
+                    <Route path="activeusers" element={<ActiveUsers />} />
+                    <Route path="suspendedusers" element={<SuspendedUsers />} />
+                    <Route path="pendingusers" element={<Pending />} />
+                  </Route>
                 </Route>
               </Route>
               <Route path="projects" element={<AdminProjects />} />
-              <Route path="investments" element={<AdminInvestment/>}>
-              <Route index element={<InvestmentBrd/>}/>
-              <Route path="investbrk" element={<InvestmentBrd/>}/>
-              <Route path="finantrans" element={<FinanTrans/>}/>
-            
+              <Route path="investments" element={<AdminInvestment />}>
+                <Route index element={<InvestmentBrd />} />
+                <Route path="investbrk" element={<InvestmentBrd />} />
+                <Route path="finantrans" element={<FinanTrans />} />
               </Route>
-
-              {/* add your own routes here */}
             </Route>
           </Routes>
         </Layout>

@@ -1,9 +1,9 @@
 import React from "react";
 
 
-const ModalIssue = ({setShowSingleFilter, setShowFilter}) => {
+const ModalIssue = ({setShowSingleFilter, setShowFilter, setShowPending}) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
+    <div onClick={setShowFilter} className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
       <div className="bg-white p-6 text-[#424242] rounded-lg h-auto space-y-4 text-center w-48 shadow-md absolute   right-0 bottom-40">
         <div>
           <h1 className=" font-semibold border-b py-3">USER STATUS</h1>
@@ -15,7 +15,7 @@ const ModalIssue = ({setShowSingleFilter, setShowFilter}) => {
           </ul>
         </div>
         <div>
-          <h1 className="border-b">ISSUE TYPE</h1>
+          <h1 className="border-b font-semibold">ISSUE TYPE</h1>
           <ul className="space-y-3 ">
             <li className="border-b pt-3">Rice Issue</li>
             <li className="border-b">Millet Issue</li>

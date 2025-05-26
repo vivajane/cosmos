@@ -1,8 +1,57 @@
 import { GrLinkPrevious, GrLinkUp } from "react-icons/gr";
 import { GrLinkNext } from "react-icons/gr";
 import { BsThreeDots } from "react-icons/bs";
+import { useState } from "react";
+import BulkAction from "../adminDashboard/AdminDashboards/IssueManagement/Modals/bulkAction/BulkAction"
+import SuccessBulk from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkResolved/BulkSuccess";
+import MarkAsResolved from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkResolved/MarkAsRes";
+import BulkSure from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkpend/BulkSure";
+import SuccessBulkPend from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkpend/BulkPendSuccess";
+import BulkDeleteAcct from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkdeleted/BulkSureDelete";
+import BulkSucessModal from "./AdminDashboards/IssueManagement/Modals/bulkAction/bulkdeleted/BulkDeleteSure";
 
 const AdminPagination = () => {
+  // resolved issues
+  const [showBulk, setShowBulk] = useState(false);
+  const [markAsResolved, setMarkAsResolved] = useState(false);
+  const [successBulk, setSuccessBulk] = useState(false);
+  // pending
+  const [bulkPending, setBulkPending] = useState(false)
+  const [successBulkPend, setSuccessBulkPend] = useState(false)
+  // delete
+const [bulkDelete, setBulkDelete] = useState(false);
+const [bulkSuccessDel, setBulkSuccessDel] = useState(false);
+
+
+  const hideBulk = () => { 
+    setShowBulk(false);
+  };
+
+  const hideMarkAsResolved = () => {
+    setMarkAsResolved(false);
+  };
+  const hideSuccessBulk = () => {
+    setSuccessBulk(false);
+  };
+  // pending
+
+  const hideBulkPending = () => {
+    setBulkPending(false);
+  };
+
+  const hideSuccessBulkPend = () => {
+    setSuccessBulkPend(false);
+  };
+  // delete
+
+  const hideBulkDelete = () => {
+    setBulkDelete(false);
+  };
+
+  const hideBulkSuccessDel = () => {
+    setBulkSuccessDel(false);
+  };
+
   return (
     <div className=" mt-3 mb-8 rounded-md">
       <div className="flex  gap-2  py-2 justify-between items-center">
@@ -38,10 +87,23 @@ const AdminPagination = () => {
           <div>
             <GrLinkUp />
           </div>
-          <button>Bulk Action</button>
+          <button onClick={() => setShowBulk(true) || console.log("clicked")}>Bulk Action</button>
         </div>
         </div>
       </div>
+      {/* resolve */}
+      {showBulk && <BulkAction setBulkPending={setBulkPending} setBulkDelete={setBulkDelete} setMarkAsResolved={setMarkAsResolved} setShowBulk={hideBulk} />}
+      {markAsResolved && <MarkAsResolved setShowBulk={setShowBulk} setSuccessBulk={setSuccessBulk} setMarkAsResolved={hideMarkAsResolved} />}
+      {successBulk && <SuccessBulk setSuccessBulk={hideSuccessBulk}/>}
+      {/* pending */}
+      {bulkPending && <BulkSure setBulkPending={hideBulkPending} setSuccessBulkPend={setSuccessBulkPend} setShowBulk={setShowBulk}/>}
+      {successBulkPend && <SuccessBulkPend setSuccessBulkPend={hideSuccessBulkPend}/>}
+      {/* delete */}
+      {bulkDelete && <BulkDeleteAcct  setBulkSuccessDel={setBulkSuccessDel} setBulkDelete={hideBulkDelete} setShowBulk={setShowBulk}/>}
+      { bulkSuccessDel && <BulkSucessModal setBulkSuccessDel={hideBulkSuccessDel}/>}
+      
+  
+      
     </div>
   );
 };

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import IssuePropsOverview from "./IssuePropsOverview";
 import AdminPagination from "../../AdminPagination";
 import { MdArrowOutward } from "react-icons/md";
+import UserDetail from "./Modals/UserDetail";
+import { useState} from "react";
+import { useOutletContext } from 'react-router-dom';
+
 
 const overviewdata = [
   {
@@ -72,6 +76,7 @@ const overviewdata = [
 ];
 
 const ActiveUsers = () => {
+   const { showUsers, setShowUsers } = useOutletContext();
   return (
     <div className="">
       <div>
@@ -82,8 +87,7 @@ const ActiveUsers = () => {
         <table className="w-full border-collapse">
           <thead className=" text-gray-700">
             <tr className="font-medium text-sm">
-              <th className="py-3 px-4 text-left w-10">
-              </th>
+              <th className="py-3 px-4 text-left w-10"></th>
               <th className="py-3 px-4 text-left">ISSUE NO</th>
               <th className="py-3 px-4 text-left">REPORTER NAME</th>
               <th className="py-3 px-4 text-left">REPORTER STATUS</th>
@@ -123,7 +127,13 @@ const ActiveUsers = () => {
                 <td className="py-3 px-4 text-gray-700">{data.type}</td>
                 <td className="py-3 px-4 text-gray-700">{data.date}</td>
                 <td className="py-3 px-4 flex items-center justify-between">
-                 <span><MdArrowOutward/></span>
+                  <span>
+                    <MdArrowOutward
+                      onClick={() =>
+                        setShowUsers(data)
+                      }
+                    />
+                  </span>
                 </td>
               </tr>
             ))}
@@ -132,6 +142,9 @@ const ActiveUsers = () => {
       </div>
 
       <AdminPagination />
+      {showUsers && (
+        <UserDetail showUsers={showUsers}  setShowUsers={setShowUsers} />
+      )}
     </div>
   );
 };

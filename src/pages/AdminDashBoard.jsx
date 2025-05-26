@@ -13,6 +13,7 @@ import SucessSuspendedModal from "../components/adminDashboard/AdminDashboards/M
 import DeleteAcct from "../components/adminDashboard/AdminDashboards/ModalsAdminDashboard/DeleteAcctModal";
 import ReasonDel from "../components/adminDashboard/AdminDashboards/ModalsAdminDashboard/ReasonDel";
 import DelSucessModal from "../components/adminDashboard/AdminDashboards/ModalsAdminDashboard/DelSuccess";
+import { useEffect } from "react";
 
 const AdminDashBoard = () => {
   const [showUserType, setShowUserType] = useState(null);
@@ -23,6 +24,7 @@ const AdminDashBoard = () => {
   const [delAccount, setDelAccount] = useState(null);
   const [reasonDelAccount, setReasonDelAccount] = useState(null);
   const[delSuccess, setDelSuccess] = useState(null);
+  
 
 
 
@@ -56,6 +58,8 @@ const AdminDashBoard = () => {
     setDelSuccess(null);
 
   }
+
+ 
   
   const location = useLocation();
   const isDashboardPage =
