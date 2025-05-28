@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { BsThreeDotsVertical } from "react-icons/bs";
 import AdminIssuePropsOverview from "./AdminIssueProps";
+import Pagination from "../../investments/newprojects/Pagination";
+import ModalFilter from "./modals/FilterInv";
 
 const wallets = [
   {
@@ -94,9 +96,15 @@ const wallets = [
   },
 ];
 const FinanTrans = () => {
+  const [invFilter, setInvFilter] = useState(null);
+
+  useEffect(() => {}, [invFilter]);
+  const hideFilterInv = () => {
+    setInvFilter(null);
+  }
   return (
     <div>
-      <AdminIssuePropsOverview name="All Transactions" />
+      <AdminIssuePropsOverview inFilter ={hideFilterInv} setInvFilter={setInvFilter} name="All Transactions" />
       <div>
         <table className="space-y-4 table-auto w-full border-collapse">
           <thead className="">
@@ -147,7 +155,7 @@ const FinanTrans = () => {
                     {data.status}
                   </span>
                 </td>
-                <div className="px-4 py-5"><BsThreeDotsVertical /></div>
+                <td className="px-4 py-5"><BsThreeDotsVertical /></td>
                 
               </tr>
             ))}
@@ -155,6 +163,8 @@ const FinanTrans = () => {
           </tbody>
         </table>
       </div>
+      <Pagination/>
+      {invFilter && <ModalFilter/>}
     </div>
   );
 };

@@ -10,7 +10,7 @@ const AdminSideBarFooter = () => {
         <div className={`absolute left-[5px] h-8 $`}></div>
         <img src={setting} alt="invest" />
         <div className="font-sanns text-base font-medium">
-          <NavLink to="/sidebar/settings">
+          <NavLink to="adminsettings">
             {({ isActive }) => (
               <>
                 {isActive && (

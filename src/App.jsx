@@ -1,7 +1,14 @@
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
@@ -35,6 +42,10 @@ import AdminInvestment from "./components/adminDashboard/investments/Investment"
 import InvestmentBrd from "./components/adminDashboard/investments/InvestmentBrd";
 import FinanTrans from "./components/adminDashboard/investments/FinanTrans";
 import IssueUsers from "./components/adminDashboard/AdminDashboards/IssueManagement/IssueUsers";
+import AdminSettings from "./pages/AdminSettings";
+import ProfileManage from "./components/adminDashboard/settings/ProfileManage";
+import NotificationsBillings from "./components/adminDashboard/settings/NotificationsBillings";
+import IssueUsersInv from "./components/adminDashboard/investments/IssuerUserInv";
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter =
@@ -46,7 +57,8 @@ const Layout = ({ children }) => {
     location.pathname.includes("/projects") ||
     location.pathname.includes("/investments") ||
     location.pathname.includes("/adminDashboard");
-  location.pathname.includes("/userDashboard");
+    location.pathname.includes("/userDashboard");
+
   return (
     <div>
       {!hideHeaderFooter && <Header />}
@@ -57,6 +69,10 @@ const Layout = ({ children }) => {
 };
 
 function App() {
+  const [invUserDetails, setInvUserDetails] = useState(null);
+  const [search, setSearch] = useState("");
+
+  
   return (
     <div>
       <BrowserRouter>
@@ -110,9 +126,23 @@ function App() {
               </Route>
               <Route path="projects" element={<AdminProjects />} />
               <Route path="investments" element={<AdminInvestment />}>
-                <Route index element={<InvestmentBrd />} />
-                <Route path="investbrk" element={<InvestmentBrd />} />
-                <Route path="finantrans" element={<FinanTrans />} />
+                <Route
+                  index
+                  element={<Navigate to="investmentissue/investbrk" />}
+                />
+                <Route path="investmentissue" element={<IssueUsersInv />}>
+                  <Route index element={<Navigate to="investbrk" />} />
+                  <Route path="investbrk" element={<InvestmentBrd invUserDetails={invUserDetails} setInvUserDetails={setInvUserDetails} />} />
+                  <Route path="finantrans" element={<FinanTrans />} />
+                </Route>
+              </Route>
+              <Route path="adminsettings" element={<AdminSettings />}>
+                <Route index element={<ProfileManage />} />
+                <Route path="profile-manage" element={<ProfileManage />} />
+                <Route
+                  path="notification-preference"
+                  element={<NotificationsBillings />}
+                />
               </Route>
             </Route>
           </Routes>

@@ -6,6 +6,8 @@ import { MdArrowOutward } from "react-icons/md";
 import UserDetail from "./Modals/UserDetail";
 import { useState} from "react";
 import { useOutletContext } from 'react-router-dom';
+import UserDetailModal from "./Modals/ModalUser/UserDetailModal";
+import UserSuccess from "./Modals/ModalUser/UserSuccess";
 
 
 const overviewdata = [
@@ -77,6 +79,15 @@ const overviewdata = [
 
 const ActiveUsers = () => {
    const { showUsers, setShowUsers } = useOutletContext();
+   const [mark, setMark] = useState(false);
+   const [userSuccess, setUserSuccess] = useState(false);
+
+   const closeMark = () => {
+     setMark(false);
+   };
+   const closeUserSuccess = () => {
+     setUserSuccess(false);
+   };
   return (
     <div className="">
       <div>
@@ -143,8 +154,11 @@ const ActiveUsers = () => {
 
       <AdminPagination />
       {showUsers && (
-        <UserDetail showUsers={showUsers}  setShowUsers={setShowUsers} />
+        <UserDetail showUsers={showUsers} setMark={setMark} setShowUsers={setShowUsers} />
+
       )}
+      {mark && <UserDetailModal setMark= {closeMark} setUserSuccess={setUserSuccess} setShowUsers={setShowUsers}/>}
+      {userSuccess && <UserSuccess setUserSuccess={closeUserSuccess} />}
     </div>
   );
 };

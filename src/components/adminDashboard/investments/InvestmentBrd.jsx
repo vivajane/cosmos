@@ -1,6 +1,10 @@
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import AdminIssuePropsOverview from "./AdminIssueProps";
+import { useState } from "react";
+import ModalFilter from "./modals/FilterInv";
+import Pagination from "../../investments/newprojects/Pagination";
+import InvestmentDetail from "./modals/InvestmentDetail";
 
 const wallets = [
   {
@@ -91,7 +95,9 @@ const wallets = [
     // color: "text-[#02487A] bg-[#E2F1FC]",
   },
 ];
-const InvestmentBrd = () => {
+const InvestmentBrd = ({ setInvUserDetails, invUserDetails }) => {
+  // const [showFilter, setShowFilter] = useState(false);
+
   return (
     <div>
       <AdminIssuePropsOverview name="All Investments" />
@@ -114,6 +120,7 @@ const InvestmentBrd = () => {
               <tr
                 className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
                 key={index}
+                onClick={() => setInvUserDetails(data)}
               >
                 <td className="font- py-4 font-normal text-sm text-[#4F5144]">
                   {data.name}
@@ -122,19 +129,22 @@ const InvestmentBrd = () => {
                   {data.desc}
                 </td>
                 <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
-                  {data.Amount}
+                  {new Intl.NumberFormat("en-NG", {
+                    style: "currency",
+                    currency: "NGN",
+                  }).format(data.Amount)}
                 </td>
                 <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
                   {data.expectedRoi}
                 </td>
                 <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
-                  ₦{data.date}
+                  {data.date}
                 </td>
                 <td className="font-sanns py-1 px-2 font-normal  text-sm text-[#4F5144]">
                   <span
-                    className={`f${
+                    className={`${
                       data.status === "Active"
-                        ? "text-[#e8edf1] bg-[#02487A]"
+                        ? "text-[#02487A] bg-[#E2F1FC]"
                         : data.status === "Completed"
                         ? "text-[#027A48] bg-[#ECFDF3]"
                         : data.status === "Pending"
@@ -145,15 +155,19 @@ const InvestmentBrd = () => {
                     {data.status}
                   </span>
                 </td>
-                <div className=" py-6 px-4">
+                <td className=" py-6 px-4">
                   <BsThreeDotsVertical />
-                </div>
+                </td>
               </tr>
             ))}
             <tr></tr>
           </tbody>
         </table>
       </div>
+      <Pagination />
+      {invUserDetails && (
+        <InvestmentDetail setInvUserDetails={setInvUserDetails} invUserDetails={invUserDetails} />
+      )}
     </div>
   );
 };
