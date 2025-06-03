@@ -24,6 +24,8 @@ const AdminDashBoard = () => {
   const [delAccount, setDelAccount] = useState(null);
   const [reasonDelAccount, setReasonDelAccount] = useState(null);
   const[delSuccess, setDelSuccess] = useState(null);
+  const [showStatus, setShowStatus] = useState("");
+
   
 
 
@@ -58,6 +60,10 @@ const AdminDashBoard = () => {
     setDelSuccess(null);
 
   }
+// for the filter of user status in admin dashboard
+   const seeStatus = (status) => {
+    setShowStatus(status);
+  };
 
  
   
@@ -71,13 +77,13 @@ const AdminDashBoard = () => {
       {isDashboardPage && (
         <div className="px-4 py-4">
           <DashBoardsHeader title="Admin Dashboard" text="Manage security, compliance, reports and transactions" image={bell} />
-          <AdminDashBoardMain showUserType={showUserType} setShowUserType={setShowUserType} />
+          <AdminDashBoardMain showUserType={showUserType} setShowUserType= {setShowUserType} setShowActiveUsers={setShowActiveUsers} showStatus={showStatus} setShowStatus={setShowStatus} />
         </div>
         
       )}
       </div>
-      {showUserType && <UserTypeModal showUserType={showUserType} showActiveUsers={showActiveUsers} setShowActiveUsers={setShowActiveUsers} setShowUserType={setShowUserType}/>}
-      {showActiveUsers && <ActiveUsers showActiveUsers={showActiveUsers} setShowActiveUsers={closeActiveUsers} setShowSuspendUsers={setShowSuspendUsers} setDelAccount={setDelAccount}/>}
+      {showUserType && <UserTypeModal  showUserType={showUserType} showActiveUsers={showActiveUsers} setShowActiveUsers={setShowActiveUsers} setShowUserType={setShowUserType} seeStatus={seeStatus}/>}
+      {showActiveUsers && <ActiveUsers  showActiveUsers={showActiveUsers} setShowActiveUsers={closeActiveUsers} setShowSuspendUsers={setShowSuspendUsers} setDelAccount={setDelAccount}/>}
       {showSuspendUsers && <Suspend setShowSuspendUsers={closeSuspendUsers} setShowPleaseSuspendUsers={setShowPleaseSuspendUsers}/>}
       {showPleaseSuspendUsers && <PleaseSuspend setShowPleaseSuspendUsers={pleaseCloseSuspendUsers} setSuccessSuspended ={setSuccessSuspended} setShowSuspendUsers ={setShowSuspendUsers} />}
       {successSuspended && <SucessSuspendedModal setSuccessSuspended={closeSuccessSuspended} setShowSuspendUsers={setShowSuspendUsers} />}

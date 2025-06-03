@@ -1,17 +1,23 @@
-import React from "react";
+
+const ModalIssue = ({setShowSingleFilter, setShowFilter, checkFilterStatus, setShowPending}) => {
+  const seeFilter = (status) => {
+    checkFilterStatus(status);
+    // setShowFilter(false);
+    console.log(status, "clicked");
+  }
+  
 
 
-const ModalIssue = ({setShowSingleFilter, setShowFilter, setShowPending}) => {
   return (
-    <div onClick={setShowFilter} className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
+    <div /*onClick={setShowFilter}*/ className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center">
       <div className="bg-white p-6 text-[#424242] rounded-lg h-auto space-y-4 text-center w-48 shadow-md absolute   right-0 bottom-40">
         <div>
           <h1 className=" font-semibold border-b py-3">USER STATUS</h1>
 
           <ul className="space-y-3 ">
-            <li onClick={() => setShowSingleFilter(true) || setShowFilter(false)} className={`pt-2 border-b  `}>All Active Users</li>
-            <li className="border-b">All Pending Users</li>
-            <li className="border-b">All Suspended Users</li>
+            {  <li onClick= {() => seeFilter("Active")} /*onClick={() => setShowSingleFilter(true) || setShowFilter(false)} */className={`pt-2 border-b  `}>All Active Users</li> }
+            <li onClick= {() => seeFilter("Pending")} className="border-b">All Pending Users</li>
+            <li onClick= {() => seeFilter("Suspended")} className="border-b">All Suspended Users</li>
           </ul>
         </div>
         <div>

@@ -95,12 +95,19 @@ const wallets = [
     // color: "text-[#02487A] bg-[#E2F1FC]",
   },
 ];
-const InvestmentBrd = ({ setInvUserDetails, invUserDetails }) => {
-  // const [showFilter, setShowFilter] = useState(false);
+const InvestmentBrd = ({ setInvUserDetails, invUserDetails, hideFilterInv, setInvFilter,invFilter,search, setSearch }) => {
+  const [showFilter, setShowFilter] = useState("");
+
+  const checkFilter = (status)=> {
+    setShowFilter(status);
+
+  }
+
+  const filteredWallets = showFilter ? wallets.filter((wallet) => wallet.status.toLowerCase() === showFilter.toLowerCase()) : wallets;
 
   return (
     <div>
-      <AdminIssuePropsOverview name="All Investments" />
+      <AdminIssuePropsOverview inFilter ={invFilter} setInvFilter={setInvFilter} name="All Investments" />
       <div className="px-4">
         <table className="space-y-4  table-auto w-full border-collapse">
           <thead className="">
@@ -116,7 +123,7 @@ const InvestmentBrd = ({ setInvUserDetails, invUserDetails }) => {
           </thead>
 
           <tbody>
-            {wallets.map((data, index) => (
+            {filteredWallets.map((data, index) => (
               <tr
                 className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
                 key={index}
@@ -165,6 +172,7 @@ const InvestmentBrd = ({ setInvUserDetails, invUserDetails }) => {
         </table>
       </div>
       <Pagination />
+      {invFilter && <ModalFilter  checkFilter={checkFilter} invFilter={invFilter} setInvFilter={setInvFilter} />}
       {invUserDetails && (
         <InvestmentDetail setInvUserDetails={setInvUserDetails} invUserDetails={invUserDetails} />
       )}

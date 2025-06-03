@@ -1,31 +1,37 @@
-import React from 'react'
-import AdminMetric from './adminDashBoardContainer/AdminMetric'
-import AdminInFlow from './adminDashBoardContainer/AdminInFlow'
-import AdminGraph from './adminDashBoardContainer/AdminGraph'
-import AdminTableOverview from './adminDashBoardContainer/AdminTable'
-import AdminUserOverview from './adminDashBoardContainer/AdminUserOverview'
-import AdminPagination from '../../AdminPagination'
-import Pagination from '../../../investments/newprojects/Pagination'
+import AdminInFlow from "./adminDashBoardContainer/AdminInFlow";
+import AdminGraph from "./adminDashBoardContainer/AdminGraph";
+import AdminTableOverview from "./adminDashBoardContainer/AdminTable";
+import AdminUserOverview from "./adminDashBoardContainer/AdminUserOverview";
+import Pagination from "../../../investments/newprojects/Pagination";
+import { useState } from "react";
 
+const AdminContainer = ({
+  setShowUserType,
+  showUserType,
+  setShowActiveUsers,
+  showStatus,
+  setShowStatus
+}) => {
+  
 
-
-const AdminContainer = () => {
+ 
   return (
     <div>
-      
-      {/* <AdminMetric/> */}
-      <div className='shadow-lg'>
-      <AdminInFlow/>
-      <AdminGraph/>
+      <div className="shadow-lg">
+        <AdminInFlow />
+        <AdminGraph />
       </div>
-      <AdminUserOverview/>
-      <AdminTableOverview/>
-      {/* <AdminPagination/> */}
-      <Pagination/>
-    
-      
+      <AdminUserOverview
+        setShowUserType={setShowUserType}
+        showUserType={showUserType}
+        showStatus={showStatus}
+        setShowStatus={setShowStatus}
+  
+      />
+      <AdminTableOverview showStatus={showStatus} setShowStatus={setShowStatus} setShowActiveUsers={setShowActiveUsers}  />
+      <Pagination />
     </div>
-  )
-}
+  );
+};
 
-export default AdminContainer
+export default AdminContainer;

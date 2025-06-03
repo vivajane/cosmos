@@ -4,11 +4,10 @@ import IssuePropsOverview from "./IssuePropsOverview";
 import AdminPagination from "../../AdminPagination";
 import { MdArrowOutward } from "react-icons/md";
 import UserDetail from "./Modals/UserDetail";
-import { useState} from "react";
-import { useOutletContext } from 'react-router-dom';
+import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import UserDetailModal from "./Modals/ModalUser/UserDetailModal";
 import UserSuccess from "./Modals/ModalUser/UserSuccess";
-
 
 const overviewdata = [
   {
@@ -78,20 +77,30 @@ const overviewdata = [
 ];
 
 const ActiveUsers = () => {
-   const { showUsers, setShowUsers } = useOutletContext();
-   const [mark, setMark] = useState(false);
-   const [userSuccess, setUserSuccess] = useState(false);
+  const { showUsers, setShowUsers } = useOutletContext();
+  const [mark, setMark] = useState(false);
+  const [userSuccess, setUserSuccess] = useState(false);
+  const[showFilterStatus, setShowFilterStatus] = useState("");
 
-   const closeMark = () => {
-     setMark(false);
-   };
-   const closeUserSuccess = () => {
-     setUserSuccess(false);
-   };
+  const closeMark = () => {
+    setMark(false);
+  };
+  const closeUserSuccess = () => {
+    setUserSuccess(false);
+  };
+
+  const checkFilterStatus =(status) => {
+    setShowFilterStatus(status);
+  };
+
+  const updatedData = showFilterStatus
+    ? overviewdata.filter((data) => data.status === showFilterStatus)
+    : overviewdata;
+ 
   return (
     <div className="">
       <div>
-        <IssuePropsOverview name="Active Accounts List" />
+        <IssuePropsOverview checkFilterStatus={checkFilterStatus}                         name="Active Accounts List" />
       </div>
 
       <div className="overflow-x-auto">
@@ -109,13 +118,17 @@ const ActiveUsers = () => {
           </thead>
 
           <tbody>
-            {overviewdata.map((data, index) => (
+            {updatedData.map((data, index) => (
               <tr
                 className="border-b border-gray-300 text-sm font-normal"
                 key={index}
               >
                 <td className="py-3 px-4">
-                  <input type="checkbox" className="w-4 h-4" />
+                  <input
+                    type="checkbox"
+
+                    className="w-4 h-4"
+                  />
                 </td>
                 <td className="py-3 px-4 text-gray-700">{data.regno}</td>
                 <td className="py-3 px-4 text-gray-700">{data.username}</td>
@@ -139,11 +152,7 @@ const ActiveUsers = () => {
                 <td className="py-3 px-4 text-gray-700">{data.date}</td>
                 <td className="py-3 px-4 flex items-center justify-between">
                   <span>
-                    <MdArrowOutward
-                      onClick={() =>
-                        setShowUsers(data)
-                      }
-                    />
+                    <MdArrowOutward onClick={() => setShowUsers(data)} />
                   </span>
                 </td>
               </tr>
@@ -154,10 +163,19 @@ const ActiveUsers = () => {
 
       <AdminPagination />
       {showUsers && (
-        <UserDetail showUsers={showUsers} setMark={setMark} setShowUsers={setShowUsers} />
-
+        <UserDetail
+          showUsers={showUsers}
+          setMark={setMark}
+          setShowUsers={setShowUsers}
+        />
       )}
-      {mark && <UserDetailModal setMark= {closeMark} setUserSuccess={setUserSuccess} setShowUsers={setShowUsers}/>}
+      {mark && (
+        <UserDetailModal
+          setMark={closeMark}
+          setUserSuccess={setUserSuccess}
+          setShowUsers={setShowUsers}
+        />
+      )}
       {userSuccess && <UserSuccess setUserSuccess={closeUserSuccess} />}
     </div>
   );

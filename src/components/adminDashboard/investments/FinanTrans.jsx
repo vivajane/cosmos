@@ -4,6 +4,8 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import AdminIssuePropsOverview from "./AdminIssueProps";
 import Pagination from "../../investments/newprojects/Pagination";
 import ModalFilter from "./modals/FilterInv";
+import InvestmentDetail from "./modals/InvestmentDetail";
+import FilterStatus from "./modals/FilterStatus";
 
 const wallets = [
   {
@@ -24,7 +26,7 @@ const wallets = [
     tranType: "Investment",
     Amount: 300000,
     date: "Feb 06, 2025",
-    status: "Pending",
+    status: "Completed",
 
     // color: "text-[#02487A] bg-[#E2F1FC]",
   },
@@ -95,16 +97,30 @@ const wallets = [
     // color: "text-[#02487A] bg-[#E2F1FC]",
   },
 ];
-const FinanTrans = () => {
-  const [invFilter, setInvFilter] = useState(null);
+const FinanTrans = ({
+  filterStatus,
+  setFilterStatus,
+  setInvUserDetails,
+  invUserDetails,
+}) => {
+  const [showStatus, setShowStatus] = useState("");
+  const checkStatus = (status) => {
+    setShowStatus(status);
+  };
 
-  useEffect(() => {}, [invFilter]);
-  const hideFilterInv = () => {
-    setInvFilter(null);
-  }
+  const filteredWallets = showStatus
+    ? wallets.filter(
+        (wallet) => wallet.status.toLowerCase() === showStatus.toLowerCase()
+      )
+    : wallets;
   return (
     <div>
-      <AdminIssuePropsOverview inFilter ={hideFilterInv} setInvFilter={setInvFilter} name="All Transactions" />
+      <AdminIssuePropsOverview
+      
+        filterStatus={filterStatus}
+        setFilterStatus={setFilterStatus}
+        name="All Transactions"
+      />
       <div>
         <table className="space-y-4 table-auto w-full border-collapse">
           <thead className="">
@@ -120,10 +136,11 @@ const FinanTrans = () => {
           </thead>
 
           <tbody>
-            {wallets.map((data, index) => (
+            {filteredWallets.map((data, index) => (
               <tr
                 className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
                 key={index}
+                onClick={() => setInvUserDetails(data)}
               >
                 <td className="font-sanns px-3 py-4 font-normal text-sm text-[#4F5144]">
                   {data.transId}
@@ -135,9 +152,7 @@ const FinanTrans = () => {
                   {data.tranType}
                 </td>
                 <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
-                ₦{data.Amount.toLocaleString()}
-                
-        
+                  ₦{data.Amount.toLocaleString()}
                 </td>
                 <td className="font-sanns px-3 font-normal text-sm text-[#4F5144]">
                   {data.date}
@@ -155,16 +170,29 @@ const FinanTrans = () => {
                     {data.status}
                   </span>
                 </td>
-                <td className="px-4 py-5"><BsThreeDotsVertical /></td>
-                
+                <td className="px-4 py-5">
+                  <BsThreeDotsVertical />
+                </td>
               </tr>
             ))}
             <tr></tr>
           </tbody>
         </table>
       </div>
-      <Pagination/>
-      {invFilter && <ModalFilter/>}
+      <Pagination />
+      {filterStatus && (
+        <FilterStatus
+          setFilterStatus={setFilterStatus}
+          filterStatus={filterStatus}
+          checkStatus={checkStatus}
+        />
+      )}
+      {invUserDetails && (
+        <InvestmentDetail
+          setInvUserDetails={setInvUserDetails}
+          invUserDetails={invUserDetails}
+        />
+      )}
     </div>
   );
 };

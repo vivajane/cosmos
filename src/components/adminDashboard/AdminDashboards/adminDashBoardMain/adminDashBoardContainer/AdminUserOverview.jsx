@@ -2,8 +2,7 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import mix from "../../../../../assets/mix.png"
 
-const AdminUserOverview = () => {
-
+const AdminUserOverview = ({setShowUserType, showUserType,}) => {
   return (
     <div className="py-8 px-4 flex justify-between  items-center w-full ">
       <h1 className="w-full font-sanns font-medium text-xl">
@@ -11,7 +10,7 @@ const AdminUserOverview = () => {
       </h1>
       <div className="flex justify-between items-center">
         <div className="border-[1px] py-1.5 border-[#00000026] w-full relative rounded flex gap-4 items-center">
-          <CiSearch className="text-[#00000080] mr-2" size={30} />
+          <CiSearch className="text-[#00000080] mr-4" size={20} />
           <input
             type="search"
             name=""
@@ -21,7 +20,7 @@ const AdminUserOverview = () => {
           />
 
         </div>
-        <div className=" absolute right-[300px]">
+        <div onClick={() => setShowUserType(true)} className="absolute right-[305px]">
           <img src={mix} alt="mix" />
         </div>
         

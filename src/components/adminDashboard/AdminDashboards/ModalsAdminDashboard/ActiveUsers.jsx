@@ -11,14 +11,14 @@ const cards = [
     title: "TOTAL FUNDS INVESTED ",
     balance: "14,000000",
     color: "bg-[#F7F9F3] text-[#6B911B]",
-    hasButton: false
+    hasButton: false,
   },
   {
     id: 2,
     title: "NUMBER OF INVESTMENTS",
     balance: 4,
     color: "bg-[#EDF5FF] text-[#00000080]",
-    hasButton: false
+    hasButton: false,
   },
   {
     id: 3,
@@ -26,21 +26,21 @@ const cards = [
     balance: 162370,
     color: "bg-[#FAFAFA] text-[#00000080]",
     hasButton: true,
-    status: "active"
+    status: "active",
   },
   {
     id: 4,
     title: "ISSUES RAISED PENDING ATTENTION",
     balance: 3,
     color: "bg-[#F9F3F3] text-[#00000080]",
-    hasButton: false
+    hasButton: false,
   },
   {
     id: 5,
     title: "ISSUES RESOLVED",
     balance: 13,
     color: "bg-[#FAF8E0] text-[#00000080]",
-    hasButton: false
+    hasButton: false,
   },
   {
     id: 6,
@@ -48,13 +48,29 @@ const cards = [
     balance: 202370,
     color: "bg-[#FAFAFA] text-[#00000080]",
     hasButton: true,
-    status: "verified"
+    status: "verified",
   },
 ];
+const statusNotes = {
+  active: "active and viable",
+  pending: "pending and not viable",
+  suspended: "suspended and not active",
+};
 
-const ActiveUsers = ({showActiveUsers, setShowActiveUsers, setShowSuspendUsers, setDelAccount}) => {
+const ActiveUsers = ({
+  showActiveUsers,
+  setShowActiveUsers,
+  setShowSuspendUsers,
+  setDelAccount,
+}) => {
+  if (!showActiveUsers) return null;
+  console.log("STATUS:", showActiveUsers.status);
+
   return (
-    <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0">
+    <div
+      onClick={setShowActiveUsers}
+      className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0"
+    >
       <div className="bg-white p-6 rounded-lg max-h-[90vh] overflow-y-auto space-y-2 shadow-lg w-auto">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl text-[#6B911B] font-medium">User Profile</h1>
@@ -139,12 +155,14 @@ const ActiveUsers = ({showActiveUsers, setShowActiveUsers, setShowSuspendUsers, 
                   </span>
                 </p>
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
-                  Status:{" "}
-                  <span className="text-[#1E1E1EBF] font-medium text-sm">
-                    Active
+                  Status:
+                  <span
+                    className={ `${showActiveUsers.status.toLowerCase() === "active" ? "text-[#1BA019]" : showActiveUsers.status.toLowerCase() === "pending" ? "text-[#FFC107]" :showActiveUsers.status.toLowerCase() === "suspended" &&  "text-[#FF0000]"} font-medium px-2 text-sm`}
+                  >
+                    {showActiveUsers.status}
                   </span>
                 </p>
-
+                
               </li>
             </ul>
           </div>
@@ -157,28 +175,27 @@ const ActiveUsers = ({showActiveUsers, setShowActiveUsers, setShowSuspendUsers, 
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
                   Investment:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
-                  ₦10,000,000
+                    ₦{showActiveUsers.amount?.toLocaleString()}
                   </span>
                 </p>
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
                   EXPECTED ROI:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
-                  25%
+                    25%
                   </span>
                 </p>
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
                   START DATE:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
-                  March 1, 2025
+                    {showActiveUsers.date}
                   </span>
                 </p>
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
                   END DATE:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
-                  December 31, 2025
+                    December 31, 2025
                   </span>
                 </p>
-
               </li>
             </ul>
           </div>
@@ -187,15 +204,23 @@ const ActiveUsers = ({showActiveUsers, setShowActiveUsers, setShowSuspendUsers, 
         <div className="space-y-2">
           <h1 className="text-[#1E1E1E] text-base font-semibold">Note</h1>
           <p className="text-[#1E1E1EBF] font-normal text-sm">
-            Account Active and Viable
+            {statusNotes[showActiveUsers.status?.toLowerCase()] }
           </p>
         </div>
 
         <div className="flex py-3 gap-3">
-          <button onClick={() => setShowSuspendUsers(true) || setShowActiveUsers(false)} className="bg-[#F9FAE0] w-auto border-[#E9922A] text-[#E9922A] py-2 px-12 rounded">
+          <button
+            onClick={() =>
+              setShowSuspendUsers(true) || setShowActiveUsers(false)
+            }
+            className="bg-[#F9FAE0] w-auto border-[#E9922A] text-[#E9922A] py-2 px-12 rounded"
+          >
             Suspend Account
           </button>
-          <button onClick={() => setDelAccount(true) || setShowActiveUsers(false)} className="bg-[#FBE2E2] border-[#C50000] text-[#C50000] py-2 px-12 rounded">
+          <button
+            onClick={() => setDelAccount(true) || setShowActiveUsers(false)}
+            className="bg-[#FBE2E2] border-[#C50000] text-[#C50000] py-2 px-12 rounded"
+          >
             Delete Account
           </button>
         </div>

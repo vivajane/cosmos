@@ -8,7 +8,7 @@ import {
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
     location.pathname.includes("/projects") ||
     location.pathname.includes("/investments") ||
     location.pathname.includes("/adminDashboard");
-    location.pathname.includes("/userDashboard");
+  location.pathname.includes("/userDashboard");
 
   return (
     <div>
@@ -69,10 +69,17 @@ const Layout = ({ children }) => {
 };
 
 function App() {
+  const [invFilter, setInvFilter] = useState(null);
   const [invUserDetails, setInvUserDetails] = useState(null);
   const [search, setSearch] = useState("");
+  const [filterStatus, setFilterStatus] = useState(null);
 
+
+  useEffect(() => {
+    console.log("invFilter state updated:", invFilter);
+  }, [invFilter]);
   
+
   return (
     <div>
       <BrowserRouter>
@@ -132,8 +139,18 @@ function App() {
                 />
                 <Route path="investmentissue" element={<IssueUsersInv />}>
                   <Route index element={<Navigate to="investbrk" />} />
-                  <Route path="investbrk" element={<InvestmentBrd invUserDetails={invUserDetails} setInvUserDetails={setInvUserDetails} />} />
-                  <Route path="finantrans" element={<FinanTrans />} />
+                  <Route
+                    path="investbrk"
+                    element={
+                      <InvestmentBrd invFilter={invFilter} setInvFilter={setInvFilter}
+                        invUserDetails={invUserDetails}
+                        setInvUserDetails={setInvUserDetails}
+                        search={search} setSearch={setSearch}
+                      />
+                    }
+                  />
+                  <Route path="finantrans" element={<FinanTrans  filterStatus={filterStatus} setFilterStatus={setFilterStatus} invUserDetails={invUserDetails} setInvUserDetails={setInvUserDetails}
+                  search={search} setSearch={setSearch} />} />
                 </Route>
               </Route>
               <Route path="adminsettings" element={<AdminSettings />}>

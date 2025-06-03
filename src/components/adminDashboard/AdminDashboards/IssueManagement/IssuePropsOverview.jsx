@@ -12,7 +12,7 @@ import SureDel from "./Modals/singleAction/markDelete/SureDel";
 import ReasonDel from "./Modals/singleAction/markDelete/ReasonDel";
 import Delete from "./Modals/singleAction/markDelete/Delete";
 
-const IssuePropsOverview = ({name}) => {
+const IssuePropsOverview = ({name, checkFilterStatus}) => {
   // resolve
   const [showFilter, setShowFilter] = useState(false);
   const [showSingleFilter, setShowSingleFilter] = useState(false);
@@ -89,6 +89,7 @@ const IssuePropsOverview = ({name}) => {
           setShowFilter={hideFilter}
           setShowSingleFilter={setShowSingleFilter}
           setShowPending={setShowPending}
+          checkFilterStatus={checkFilterStatus}
         />
       )}
       {showSingleFilter && (
