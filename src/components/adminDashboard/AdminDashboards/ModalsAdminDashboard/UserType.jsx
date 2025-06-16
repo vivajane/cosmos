@@ -16,15 +16,13 @@ const UserTypeModal = ({ seeStatus, setShowUserType }) => {
           >
             All Active Users
           </li>
-          <li onClick={() => checkShow("Suspended")} className="border-b">
+          <li onClick={() => checkShow("Suspended") || setShowUserType(false)} className="border-b">
             All Suspended Users
           </li>
           <li onClick={() => checkShow("Pending")} className="border-b">
             All Pending Users
           </li>
-          <li onClick={() => checkShow("")} className="border-b">
-            All Users
-          </li>
+         
         </ul>
       </div>
     </div>

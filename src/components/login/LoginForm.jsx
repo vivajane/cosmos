@@ -27,7 +27,7 @@ const LoginForm = () => {
         </div>
         <div className='py-2'>
             <label className='font-normal text-base' htmlFor="pw">PassWord</label>
-            <input className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="text" name="pw" id="pw" placeholder='   Password' />
+            <input className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="password" name="pw" id="pw" placeholder='   Password' />
             <p className='text-[#E5E7EB] text-sm font-normal'>Use 8 or more characters with a mix of letters, numbers & symbols</p>
         </div>
         <div className='flex justify-between'>

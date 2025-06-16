@@ -47,12 +47,12 @@ const SignUpForm = () => {
         </div>
         <div className='py-2'>
             <label className='font-normal text-base' htmlFor="pw">Password</label>
-            <input onChange={onChangeHandler} className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="text" name="password" id="pw" placeholder='   Password' />
+            <input onChange={onChangeHandler} className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="password" name="password" id="pw" placeholder='   Password' />
             <p className='text-[#E5E7EB] text-sm font-normal'>Use 8 or more characters with a mix of letters, numbers & symbols</p>
         </div>
         <div className='py-2'>
             <label className='font-normal text-base' htmlFor="cpw">Confirm Password</label>
-            <input onChange={onChangeHandler} className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="text" name="confirmPassword" id="cpw" placeholder='   Confirm Password' />
+            <input onChange={onChangeHandler} className='border-[1px] w-full py-1 rounded mt-1 border-[#E5E7EB]'  type="password" name="confirmPassword" id="cpw" placeholder='   Confirm Password' />
         </div>
         <div className='py-2 flex gap-2'>
             <input onChange={onChangeHandler}  type="checkbox" name="confirm" id="confirm" />

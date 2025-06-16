@@ -10,11 +10,8 @@ const AdminContainer = ({
   showUserType,
   setShowActiveUsers,
   showStatus,
-  setShowStatus
+  setShowStatus,
 }) => {
-  
-
- 
   return (
     <div>
       <div className="shadow-lg">
@@ -26,9 +23,12 @@ const AdminContainer = ({
         showUserType={showUserType}
         showStatus={showStatus}
         setShowStatus={setShowStatus}
-  
       />
-      <AdminTableOverview showStatus={showStatus} setShowStatus={setShowStatus} setShowActiveUsers={setShowActiveUsers}  />
+      <AdminTableOverview
+        showStatus={showStatus}
+        setShowStatus={setShowStatus}
+        setShowActiveUsers={setShowActiveUsers}
+      />
       <Pagination />
     </div>
   );

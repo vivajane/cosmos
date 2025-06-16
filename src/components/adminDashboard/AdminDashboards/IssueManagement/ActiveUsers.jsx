@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import IssuePropsOverview from "./IssuePropsOverview";
 import AdminPagination from "../../AdminPagination";
 import { MdArrowOutward } from "react-icons/md";
