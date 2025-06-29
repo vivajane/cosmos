@@ -26,10 +26,6 @@ const AdminDashBoard = () => {
   const[delSuccess, setDelSuccess] = useState(null);
   const [showStatus, setShowStatus] = useState("");
 
-  
-
-
-
   const closeUserType = () => {
     setShowUserType(null);
   }

@@ -93,35 +93,38 @@ const AdminTableOverview = ({ setShowActiveUsers, showStatus }) => {
       )
     : tables;
   return (
-    <div className="py-6 overflow-x-auto px-4 ">
-      <table className="min-w-full table-fixed">
+    <div className="w-full overflow-x-auto px-4">
+      <table className="min-w-[700px] w-full table-auto border-collapse">
         <thead className="bg-[#FCFCFC]">
-          <tr className="font-sans text-[#4F5144] font-medium text-sm">
-            <th className=" py-2 w-1/4 text-left"> USER NAME</th>
-            <th className=" py-2 w-1/6 text-left">USER EMAIL</th>
-            <th className=" py-2 w-1/5 text-left">USER STATUS</th>
-            <th className="py-2 w-1/6 text-left"># OF INV</th>
-            <th className="py-2 w-1/3 text-left">DATE REGISTERED</th>
+          <tr className="text-[#4F5144] font-medium text-sm text-left">
+            <th className="py-3 px-2">USER NAME</th>
+            <th className="py-3 px-2">USER EMAIL</th>
+            <th className="py-3 px-2">USER STATUS</th>
+            <th className="py-3 px-2"># OF INV</th>
+            <th className="py-3 px-2">DATE REGISTERED</th>
+            <th className="py-3 px-2"></th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((table) => (
             <tr
-              className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
               key={table.id}
+              className="text-[#4F5144] text-sm font-normal border-b"
             >
-              <td>{table.name}</td>
-              <td>{table.email}</td>
-              <td>
+              <td className="py-3 px-2">{table.name}</td>
+              <td className="py-3 px-2">{table.email}</td>
+              <td className="py-3 px-2">
                 <span className={`px-4 py-1 rounded-md ${table.color}`}>
                   {table.status}
                 </span>
               </td>
-              <td>₦{table.amount}</td>
-              <td className="px-2 py-4 ml-2">{table.date}</td>
-              {/* <td>{table.date}</td> */}
-              <td>
-                <MdArrowOutward onClick={() => setShowActiveUsers(table)} />
+              <td className="py-3 px-2">₦{table.amount}</td>
+              <td className="py-3 px-2">{table.date}</td>
+              <td className="py-3 px-2">
+                <MdArrowOutward
+                  onClick={() => setShowActiveUsers(table)}
+                  className="cursor-pointer"
+                />
               </td>
             </tr>
           ))}
