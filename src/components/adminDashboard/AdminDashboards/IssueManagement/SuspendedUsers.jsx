@@ -18,7 +18,7 @@ const overviewdata = [
 
 const SuspendedUsers = () => {
   return (
-    <div className="">
+    <div className="w-full">
       <IssuePropsOverview name="Suspended Users" />
 
       <div className="overflow-x-auto">

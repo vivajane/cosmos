@@ -11,8 +11,12 @@ const AdminSideBarMenu = () => {
     setShowIssue((showIssue) => !showIssue);
   };
 
+  const HideIssuePage = () => {
+    setShowIssue(false);
+  };
+
   return (
-    <div className="py-6 px-4">
+    <div  className="py-6 px-4">
       <h2 className="font-manrope text-[#00000040] text-base font-semibold">
         Menu
       </h2>
@@ -44,8 +48,8 @@ const AdminSideBarMenu = () => {
             </div>
           </div>
           {showIssue && (
-           <div className="my-8 mx-2">
-             <NavLink
+           <div  className="my-8 mx-2">
+             <NavLink 
               className={({ isActive }) =>
                 isActive
                   ? "bg-[#0000001A] pl-1 pr-2  py-2 my-6 rounded-md"

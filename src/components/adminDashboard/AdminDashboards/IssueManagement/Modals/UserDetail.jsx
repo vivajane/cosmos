@@ -12,16 +12,16 @@ const UserDetail = ({ setShowUsers, showUsers, setMark}) => {
       onClick={() => setShowUsers(null)} 
     >
       <div
-        className="bg-white p-6 text-[#424242] overflow-y-auto max-h-[90vh]  w-2/5 rounded-lg space-y-4 text-center shadow-md"
+        className="bg-white p-6 text-[#424242] overflow-y-auto max-h-[90vh] w-4/5  md:w-2/5 rounded-lg space-y-4 text-center shadow-md"
         onClick={(e) => e.stopPropagation()} // prevent modal from closing on content click
       >
         <div className="flex border-b justify-between items-center">
           <h1 className=" font-semibold text-[#6B911B]">Issues Details</h1>
           <div>
-            <FaTimesCircle />
+            <FaTimesCircle onClick={() => setShowUsers(null)} />
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="md:flex gap-2">
           <div>
             <img className="h-10 w-10 rounded-full" src={face} alt="face" />
           </div>
@@ -102,7 +102,7 @@ const UserDetail = ({ setShowUsers, showUsers, setMark}) => {
             Admin can add internal comments or note here
           </p>
         </div>
-        <div className="flex py-3 gap-3">
+        <div className="lg:flex py-3 gap-3 space-y-4">
           <button className="bg-[#FFFFFF] border-[#6B911B]  border text-[#6B911B] px-3 py-2 rounded">
             Save and Continue Later
           </button>

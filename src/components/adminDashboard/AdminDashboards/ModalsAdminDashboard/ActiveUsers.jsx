@@ -71,7 +71,7 @@ const ActiveUsers = ({
       onClick={setShowActiveUsers}
       className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0"
     >
-      <div className="bg-white p-6 rounded-lg max-h-[90vh] overflow-y-auto space-y-2 shadow-lg w-auto">
+      <div className="bg-white p-6 rounded-lg md:max-h-[90vh] max-h-[60vh] overflow-y-auto space-y-2 shadow-lg md:w-auto w-72">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl text-[#6B911B] font-medium">User Profile</h1>
           <span onClick={setShowActiveUsers} className="text-[#1E1E1E80]">
@@ -82,12 +82,12 @@ const ActiveUsers = ({
         <div className="flex gap-3">
           <div>
             <img
-              className="h-10 w-10 rounded-full"
+              className="md:h-10 md:w-10 h-4 w-6 rounded-full"
               src={passport}
               alt="passpport"
             />
           </div>
-          <div>
+          <div className="text-sm md:text-base">
             <h1>April Dave</h1>
             <p>
               April@gmail.com <span>+234 701 123 4567</span>
@@ -95,7 +95,7 @@ const ActiveUsers = ({
           </div>
         </div>
 
-        <div className={`grid mb-10 grid-cols-3 py-2 text-xs gap-4`}>
+        <div className={`grid mb-10 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 py-2 text-xs gap-4`}>
           {cards.map((card) => (
             <div
               className={`text-[10px] rounded-lg ${card.color}`}
@@ -113,8 +113,8 @@ const ActiveUsers = ({
         </div>
         <hr />
         <div className="">
-          <div className="flex gap-3 items-center">
-            <h1 className="text-[#1E1E1E] font-semibold text-base">
+          <div className="flex gap-2 md:gap-3 items-center">
+            <h1 className="text-[#1E1E1E] font-semibold text-xs sm:text-sm md:text-base">
               Verification Document
             </h1>
             <h1 className="text-[#1E1E1EBF] font-medium text-sm">NIN</h1>
@@ -129,17 +129,17 @@ const ActiveUsers = ({
           </div>
         </div>
         <hr />
-        <div className="flex justify-between ">
-          <div>
-            <h1 className="text-[#1E1E1E] text-base font-semibold">
+        <div className="flex justify-between gap-6 ">
+          <div className="">
+            <h1 className="text-[#1E1E1E] md:text-base text-xs font-semibold">
               Recent Project
             </h1>
             <ul className="pt-3">
               <li className="space-y-3">
-                <p className="text-[#1E1E1EBF] font-normal text-sm">
+                <p className="text-[#1E1E1EBF] font-normal text-xs md:text-sm">
                   Project Name:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
-                    Rice Farming In
+                    Rice Farming
                   </span>
                 </p>
                 <p className="text-[#1E1E1EBF] font-normal text-sm">
@@ -167,7 +167,7 @@ const ActiveUsers = ({
             </ul>
           </div>
           <div>
-            <h1 className="text-[#1E1E1E] text-base font-semibold">
+            <h1 className="text-[#1E1E1E] text-xs md:text-base font-semibold">
               Investment Details
             </h1>
             <ul className="pt-3">
@@ -178,19 +178,19 @@ const ActiveUsers = ({
                     ₦{showActiveUsers.amount?.toLocaleString()}
                   </span>
                 </p>
-                <p className="text-[#1E1E1EBF] font-normal text-sm">
+                <p className="text-[#1E1E1EBF] font-normal text-xs md:text-sm">
                   EXPECTED ROI:{" "}
-                  <span className="text-[#1E1E1EBF] font-medium text-sm">
+                  <span className="text-[#1E1E1EBF] font-medium text-xs md:text-sm">
                     25%
                   </span>
                 </p>
-                <p className="text-[#1E1E1EBF] font-normal text-sm">
+                <p className="text-[#1E1E1EBF] font-normal text-xs md:text-sm">
                   START DATE:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
                     {showActiveUsers.date}
                   </span>
                 </p>
-                <p className="text-[#1E1E1EBF] font-normal text-sm">
+                <p className="text-[#1E1E1EBF] font-normal text-xs md:text-sm">
                   END DATE:{" "}
                   <span className="text-[#1E1E1EBF] font-medium text-sm">
                     December 31, 2025
@@ -208,18 +208,18 @@ const ActiveUsers = ({
           </p>
         </div>
 
-        <div className="flex py-3 gap-3">
+        <div className="md:flex py-3 space-y-4 md:space-y-0 gap-3">
           <button
             onClick={() =>
               setShowSuspendUsers(true) || setShowActiveUsers(false)
             }
-            className="bg-[#F9FAE0] w-auto border-[#E9922A] text-[#E9922A] py-2 px-12 rounded"
+            className="bg-[#F9FAE0] w-auto border-[#E9922A] text-[#E9922A] py-2 md:px-12 px-6 rounded"
           >
             Suspend Account
           </button>
           <button
             onClick={() => setDelAccount(true) || setShowActiveUsers(false)}
-            className="bg-[#FBE2E2] border-[#C50000] text-[#C50000] py-2 px-12 rounded"
+            className="bg-[#FBE2E2] border-[#C50000] text-[#C50000] py-2 md:px-12 px-6 rounded"
           >
             Delete Account
           </button>

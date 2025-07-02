@@ -96,13 +96,13 @@ const ActiveUsers = () => {
     : overviewdata;
  
   return (
-    <div className="">
+    <div className="w-full">
       <div>
         <IssuePropsOverview checkFilterStatus={checkFilterStatus}                         name="Active Accounts List" />
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
+      <div className="overflow-x-scroll w-full">
+        <table className="min-w-[700px] table-auto  border-collapse w-full">
           <thead className=" text-gray-700">
             <tr className="font-medium text-sm">
               <th className="py-3 px-4 text-left w-10"></th>

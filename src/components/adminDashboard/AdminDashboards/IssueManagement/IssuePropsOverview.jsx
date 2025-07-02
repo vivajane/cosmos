@@ -64,7 +64,7 @@ const IssuePropsOverview = ({name, checkFilterStatus}) => {
   return (
     <div className=" w-full px-4 rounded-t-xl">
       <div className="flex justify-between py-2 items-center">
-        <h1 className="font-sanns text-[#1E1E1E] text-xl font-medium">
+        <h1 className="font-sanns text-[#1E1E1E] text-sm md:text-xl font-medium">
           {name}
         </h1>
         <div className="border-[1px] py-1 mt-3 px-4 justify-between border-[#00000026] w-2/4 relative rounded flex items-center">
