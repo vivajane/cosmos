@@ -78,7 +78,7 @@ const ActiveUsers = () => {
   const { showUsers, setShowUsers } = useOutletContext();
   const [mark, setMark] = useState(false);
   const [userSuccess, setUserSuccess] = useState(false);
-  const[showFilterStatus, setShowFilterStatus] = useState("");
+  const [showFilterStatus, setShowFilterStatus] = useState("");
 
   const closeMark = () => {
     setMark(false);
@@ -87,53 +87,52 @@ const ActiveUsers = () => {
     setUserSuccess(false);
   };
 
-  const checkFilterStatus =(status) => {
+  const checkFilterStatus = (status) => {
     setShowFilterStatus(status);
   };
 
   const updatedData = showFilterStatus
     ? overviewdata.filter((data) => data.status === showFilterStatus)
     : overviewdata;
- 
+
   return (
     <div className="w-full">
       <div>
-        <IssuePropsOverview checkFilterStatus={checkFilterStatus}                         name="Active Accounts List" />
+        <IssuePropsOverview
+          checkFilterStatus={checkFilterStatus}
+          name="Active Accounts List"
+        />
       </div>
 
-      <div className="overflow-x-scroll w-full">
-        <table className="min-w-[700px] table-auto  border-collapse w-full">
-          <thead className=" text-gray-700">
-            <tr className="font-medium text-sm">
-              <th className="py-3 px-4 text-left w-10"></th>
-              <th className="py-3 px-4 text-left">ISSUE NO</th>
-              <th className="py-3 px-4 text-left">REPORTER NAME</th>
-              <th className="py-3 px-4 text-left">REPORTER STATUS</th>
-              <th className="py-3 px-4 text-left">ISSUE TYPE</th>
-              <th className="py-3 px-4 text-left">DATE</th>
-              <th className="py-3 px-4 text-left">Actions</th>
-            </tr>
-          </thead>
+      <div className="w-full overflow-x-auto">
+        <div className="min-w-[900px] w-full align-middle">
+          <table className="w-full table-auto border-collapse">
+            <thead className="text-gray-700 bg-gray-50">
+              <tr className="font-medium text-sm">
+                <th className="py-3 px-4 text-left w-10"></th>
+                <th className="py-3 px-4 text-left">ISSUE NO</th>
+                <th className="py-3 px-4 text-left">REPORTER NAME</th>
+                <th className="py-3 px-4 text-left">REPORTER STATUS</th>
+                <th className="py-3 px-4 text-left">ISSUE TYPE</th>
+                <th className="py-3 px-4 text-left">DATE</th>
+                <th className="py-3 px-4 text-left">ACTIONS</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            {updatedData.map((data, index) => (
-              <tr
-                className="border-b border-gray-300 text-sm font-normal"
-                key={index}
-              >
-                <td className="py-3 px-4">
-                  <input
-                    type="checkbox"
-
-                    className="w-4 h-4"
-                  />
-                </td>
-                <td className="py-3 px-4 text-gray-700">{data.regno}</td>
-                <td className="py-3 px-4 text-gray-700">{data.username}</td>
-                <td className="py-3 px-4">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold 
-                      ${
+            <tbody>
+              {updatedData.map((data, index) => (
+                <tr
+                  className="border-b border-gray-300 text-sm font-normal"
+                  key={index}
+                >
+                  <td className="py-3 px-4">
+                    <input type="checkbox" className="w-4 h-4" />
+                  </td>
+                  <td className="py-3 px-4 text-gray-700">{data.regno}</td>
+                  <td className="py-3 px-4 text-gray-700">{data.username}</td>
+                  <td className="py-3 px-4">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         data.status === "Active"
                           ? "text-green-700 bg-green-100"
                           : data.status === "Suspended"
@@ -142,21 +141,20 @@ const ActiveUsers = () => {
                           ? "text-yellow-700 bg-yellow-100"
                           : "text-gray-500 bg-gray-200"
                       }`}
-                  >
-                    {data.status}
-                  </span>
-                </td>
-                <td className="py-3 px-4 text-gray-700">{data.type}</td>
-                <td className="py-3 px-4 text-gray-700">{data.date}</td>
-                <td className="py-3 px-4 flex items-center justify-between">
-                  <span>
+                    >
+                      {data.status}
+                    </span>
+                  </td>
+                  <td className="py-3 px-4 text-gray-700">{data.type}</td>
+                  <td className="py-3 px-4 text-gray-700">{data.date}</td>
+                  <td className="py-3 px-4 flex items-center justify-between">
                     <MdArrowOutward onClick={() => setShowUsers(data)} />
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <AdminPagination />

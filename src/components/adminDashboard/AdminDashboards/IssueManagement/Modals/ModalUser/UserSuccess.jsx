@@ -6,7 +6,7 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 const UserSuccess = ({setUserSuccess}) => {
   return (
     <div className="bg-black top-0 flex flex-col justify-center items-center bottom-0 left-0 right-0 fixed ">
-      <div className="bg-white p-6 rounded-lg max-h-[90vh] overflow-y-auto space-y-2 shadow-lg w-96">
+      <div className="bg-white p-6 rounded-lg max-h-[90vh] overflow-y-auto space-y-2 shadow-lg w-80 md:w-96">
         <div className="flex justify-end">
           <FaTimesCircle onClick={setUserSuccess} size={20} />
         </div>

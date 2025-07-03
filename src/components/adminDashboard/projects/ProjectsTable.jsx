@@ -86,19 +86,19 @@ const overviewdata = [
 
 const ProjectsTable = () => {
   return (
-    <div className="pb-4">
-      <table className="table-auto w-full border-collapse">
+    <div className="w-full overflow-x-auto pb-4">
+      <table className="min-w-[900px] table-auto w-full border-collapse">
         <thead className=" text-gray-600 text-sm font-medium border-b">
           <tr>
             <th className="py-2 px-4 text-left">Project Name</th>
-            <th className="py-2 px-4 text-left ">Funding Goals</th>
-            <th className="py-2 px-4 text-left ">Min. Investment</th>
-            <th className="py-2 px-4 text-left ">Amount Raised</th>
-            <th className="py-2 px-4 text-left ">ROI</th>
+            <th className="py-2 px-4 text-left">Funding Goals</th>
+            <th className="py-2 px-4 text-left">Min. Investment</th>
+            <th className="py-2 px-4 text-left">Amount Raised</th>
+            <th className="py-2 px-4 text-left">ROI</th>
             <th className="py-2 px-4 text-left">Start Date</th>
-            <th className="py-2 px-4 text-left ">End Date</th>
-            <th className="py-2 px-4 text-left ">Status</th>
-            <th className="py-2 px-4 text-center "></th>
+            <th className="py-2 px-4 text-left">End Date</th>
+            <th className="py-2 px-4 text-left">Status</th>
+            <th className="py-2 px-4 text-center"></th>
           </tr>
         </thead>
         <tbody>
@@ -136,5 +136,6 @@ const ProjectsTable = () => {
     </div>
   );
 };
+
 
 export default ProjectsTable;

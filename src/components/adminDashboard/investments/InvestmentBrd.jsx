@@ -125,7 +125,7 @@ const InvestmentBrd = ({ setInvUserDetails, invUserDetails, hideFilterInv, setIn
           <tbody>
             {filteredWallets.map((data, index) => (
               <tr
-                className=" text-[#4F5144] text-sm font-normal border-b border-gray-300"
+                className="cursor-pointer text-[#4F5144] text-sm font-normal border-b border-gray-300"
                 key={index}
                 onClick={() => setInvUserDetails(data)}
               >

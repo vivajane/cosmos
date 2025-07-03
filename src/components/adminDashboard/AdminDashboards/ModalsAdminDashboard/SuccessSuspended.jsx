@@ -4,7 +4,7 @@ import right from "../../../../assets/right.png"
 const SucessSuspendedModal = ({setSuccessSuspended}) => {
   return (
     <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0">
-      <div className="bg-white p-4 text-center rounded-lg space-y-3shadow-lg w-96">
+      <div className="bg-white p-4 text-center rounded-lg space-y-3shadow-lg md:w-96">
         <span 
           className="text-[#1E1E1E80] flex justify-end"
           

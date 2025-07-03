@@ -19,7 +19,7 @@ const AdminSideBar = () => {
       {/* Layout Grid */}
       <div className="grid md:grid-cols-[220px_1fr]">
         {/* Sidebar */}
-        <div className="hidden md:block border-r-2 h-screen overflow-y-auto">
+        <div className="hidden md:block sticky top-0 border-r-2 h-screen overflow-y-auto">
           <AdminSideBarHeader />
           <AdminSideBarMenu />
           <AdminSideBarFooter />

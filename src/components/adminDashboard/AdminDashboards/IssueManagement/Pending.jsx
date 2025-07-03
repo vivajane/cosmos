@@ -76,58 +76,55 @@ const Pending = () => {
     <div className="">
       <IssuePropsOverview name="Pending Users" />
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
-          <thead className=" text-gray-700">
-            <tr className="text-sm font-medium border-b">
-              <th className="px-4 py-3 text-left w-10">
-                {/* <input type="checkbox" className="w-4 h-4" /> */}
-              </th>
-              <th className="px-4 py-3 text-left">ISSUE NO</th>
-              <th className="px-4 py-3 text-left">REPORTER NAME</th>
-              <th className="px-4 py-3 text-left">REPORTER STATUS</th>
-              <th className="px-4 py-3 text-left">ISSUE TYPE</th>
-              <th className="px-4 py-3 text-left">DATE</th>
-              <th className="px-4 py-3 text-left"></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {overviewdata.map((data, index) => (
-              <tr
-                className="border-b border-gray-300 text-sm font-normal"
-                key={index}
-              >
-                <td className="px-4 py-3">
-                  <input type="checkbox" className="w-4 h-4" />
-                </td>
-                <td className="px-4 py-3 text-gray-700">{data.regno}</td>
-                <td className="px-4 py-3 text-gray-700">{data.username}</td>
-                <td className="px-4 py-3">
-                  <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold
-                      ${
-                        data.status === "Active"
-                          ? "text-blue-700 bg-blue-100"
-                          : data.status === "Suspended"
-                          ? "text-red-700 bg-red-100"
-                          : data.status === "Pending"
-                          ? "text-yellow-700 bg-yellow-100"
-                          : "text-gray-500 bg-gray-200"
-                      }`}
-                  >
-                    {data.status}
-                  </span>
-                </td>
-                <td className="px-4 py-3 text-gray-700">{data.type}</td>
-                <td className="px-4 py-4 text-gray-700">{data.date}</td>
-                <td className="px-4 py-3 flex items-center justify-between">
-                  <MdArrowOutward/>
-                </td>
+      <div className="w-full overflow-x-auto">
+        <div className="min-w-[900px]">
+          <table className="table-auto border-collapse w-full">
+            <thead className="text-gray-700">
+              <tr className="text-sm font-medium border-b">
+                <th className="px-4 py-3 text-left w-10"></th>
+                <th className="px-4 py-3 text-left">ISSUE NO</th>
+                <th className="px-4 py-3 text-left">REPORTER NAME</th>
+                <th className="px-4 py-3 text-left">REPORTER STATUS</th>
+                <th className="px-4 py-3 text-left">ISSUE TYPE</th>
+                <th className="px-4 py-3 text-left">DATE</th>
+                <th className="px-4 py-3 text-left">ACTIONS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {overviewdata.map((data, index) => (
+                <tr key={index} className="border-b text-sm font-normal">
+                  <td className="px-4 py-3">
+                    <input type="checkbox" className="w-4 h-4" />
+                  </td>
+                  <td className="px-4 py-3 text-gray-700">{data.regno}</td>
+                  <td className="px-4 py-3 text-gray-700">{data.username}</td>
+                  <td className="px-4 py-3">
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold
+                  ${
+                    data.status === "Active"
+                      ? "text-blue-700 bg-blue-100"
+                      : data.status === "Suspended"
+                      ? "text-red-700 bg-red-100"
+                      : data.status === "Pending"
+                      ? "text-yellow-700 bg-yellow-100"
+                      : "text-gray-500 bg-gray-200"
+                  }`}
+                    >
+                      {data.status}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-gray-700">{data.type}</td>
+                  <td className="px-4 py-4 text-gray-700">{data.date}</td>
+                  <td className="px-4 py-3 flex items-center justify-between">
+                    <MdArrowOutward />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <AdminPagination />
