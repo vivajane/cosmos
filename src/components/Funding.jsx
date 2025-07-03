@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Funding = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative px-4 h-screen">
       <div className="bg-bgFund bg-center bg-cover bg-no-repeat  absolute inset-0"></div>
       <div className="bg-gradient-to-tr from-[#101d0e] to-transparent absolute inset-0"></div>
       <div className="flex items-center text-center lg:py-36 xl:28 py-56 sm:py-60 justify-center md:py-44 flex-col  relative z-10  text-white">
