@@ -4,7 +4,7 @@ import { FaTimes } from "react-icons/fa";
 const PleaseSuspend = ({setShowPleaseSuspendUsers, setSuccessSuspended, setShowSuspendUsers}) => {
   return (
     <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0">
-      <div className="bg-white p-6 rounded-lg max-h-[50vh] overflow-y-auto space-y-2 shadow-lg w-1/2">
+      <div className="bg-white p-6 rounded-lg max-h-[50vh] overflow-y-auto space-y-2 shadow-lg md:w-1/2">
         <div  className="text-[#1E1E1E80] py-2 flex justify-between items-center">
         
         <h1 className="text-2xl text-[#6B911B] font-medium">Reason for Suspension</h1>
@@ -25,7 +25,7 @@ const PleaseSuspend = ({setShowPleaseSuspendUsers, setSuccessSuspended, setShowS
           <button className=" py-2 px-3 w-full border-[#6B911B] border rounded-md text-[#6B911B]">
         Cancel
           </button>
-          <button onClick={() => setSuccessSuspended(true) || setShowPleaseSuspendUsers(false) || setShowSuspendUsers(false)}  className="bg-[#E68C16] py-2 px-3 w-full border  rounded-md text-[#FFFFFF]">
+          <button onClick={() => setSuccessSuspended(true) || setShowPleaseSuspendUsers(false) || setShowSuspendUsers(false)}  className="bg-[#E68C16] py-2 px-3 w-full border text-sm md:text-base rounded-md text-[#FFFFFF]">
             Suspend Account
           </button>
         </div>

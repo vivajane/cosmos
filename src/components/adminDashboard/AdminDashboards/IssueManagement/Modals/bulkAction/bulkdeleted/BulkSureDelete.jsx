@@ -5,7 +5,7 @@ import { IoMdWarning } from "react-icons/io"
 const BulkDeleteAcct = ({setBulkDelete, setBulkSuccessDel}) => {
   return (
     <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-[0] bottom-0 right-0 left-0">
-      <div className="bg-white p-6 rounded-lg max-h-[50vh] overflow-y-auto space-y-2 shadow-lg w-96">
+      <div className="bg-white p-6 rounded-lg max-h-[50vh] overflow-y-auto space-y-2 shadow-lg w-80 md:w-96">
         <div className="text-[#1E1E1E80] flex justify-end">
         <FaTimes onClick={setBulkDelete}  size={20} />
         </div>

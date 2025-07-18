@@ -3,15 +3,15 @@ import { FaTimesCircle } from "react-icons/fa";
 
 const InvestmentDetail = ({ invUserDetails, setInvUserDetails }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-85 flex bottom-0 right-0 left-0 top-0 items-center justify-center">
-      <div className="bg-white p-6 text-[#424242] overflow-y-auto rounded-lg h-96 space-y-4 text-left  w-96 shadow-md absolute">
+    <div className="fixed  inset-0 bg-black bg-opacity-85 flex bottom-0 right-0 left-0 top-0 items-center justify-center">
+      <div className="bg-white text-sm md:text-base p-6 text-[#424242] overflow-y-auto rounded-lg h-96 space-y-4 text-left md:w-96 shadow-md absolute">
         <div className="flex border-b justify-between items-center">
           <h1 className=" font-semibold text-[#6B911B]">Issues Details</h1>
           <div>
             <FaTimesCircle  size={20} onClick={() => setInvUserDetails(null)}/>
           </div>
         </div>
-        <h1 className="font-semibold text-[#1E1E1E] font-sanns text-base">
+        <h1 className="font-semibold text-[#1E1E1E] font-sanns md:text-base">
           Investment Overview
         </h1>
         <div className="space-y-2">
@@ -72,7 +72,7 @@ const InvestmentDetail = ({ invUserDetails, setInvUserDetails }) => {
             <tbody className="py-4">
               <tr >
                 <td className="pt-4">Initial Investment</td>
-                <td>
+                <td className="pt-4">
                   {new Intl.NumberFormat("en-NG", {
                     style: "currency",
                     currency: "NGN",
@@ -81,7 +81,7 @@ const InvestmentDetail = ({ invUserDetails, setInvUserDetails }) => {
               </tr>
               <tr className="">
                 <td className="py-4">Expected Returns</td>
-                <td>
+                <td className="pt-">
                   {new Intl.NumberFormat("en-NG", {
                     style: "currency",
                     currency: "NGN",

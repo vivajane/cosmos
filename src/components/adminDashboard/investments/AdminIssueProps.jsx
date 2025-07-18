@@ -4,15 +4,15 @@ import { TbMessage2Search } from "react-icons/tb";
 const AdminIssuePropsOverview = ({ name, setInvFilter, setFilterStatus }) => {
   return (
     <div className=" px-4 rounded-t-xl">
-      <div className="flex justify-between py-2 items-center">
+      <div className="md:flex justify-between py-2 items-center">
         <div className="w-full">
           {" "}
           <h1 className="font-sanns text-[#1E1E1E] text-xl font-medium">
             {name}
           </h1>
         </div>
-        <div className="flex gap-4 w-full justify-between items-center">
-          <div className="border-[1px] py-1 mt-3 w-96 border-[#00000026] relative rounded flex items-center">
+        <div className="md:flex gap-4  overflow-x-auto justify-between items-center">
+          <div className="border-[1px] py-1 w-72 mt-3 md:w-96 border-[#00000026] relative rounded flex items-center">
             <CiSearch className="text-[#00000080] mr-2" size={20} />
             <input
               type="search"

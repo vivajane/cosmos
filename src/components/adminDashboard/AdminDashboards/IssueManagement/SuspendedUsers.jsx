@@ -18,61 +18,62 @@ const overviewdata = [
 
 const SuspendedUsers = () => {
   return (
-    <div className="w-full">
-      <IssuePropsOverview name="Suspended Users" />
+  <div className="w-full">
+  <IssuePropsOverview name="Suspended Users" />
 
-      <div className="overflow-x-auto">
-        <table className="w-full border-collapse">
-          {/* Table Head */}
-          <thead className=" text-[#00000080]">
-            <tr className="text-left text-sm font-medium border-b">
-              <th className="px-4 py-2 w-10"></th> {/* Checkbox */}
-              <th className="px-4 py-2 w-1/6">ISSUE NO</th>
-              <th className="px-4 py-2 w-1/4">REPORTER NAME</th>
-              <th className="px-4 py-2 w-1/6">REPORTER STATUS</th>
-              <th className="px-4 py-2 w-1/5">ISSUE TYPE</th>
-              <th className="px-4 py-2 w-1/6">DATE</th>
-              <th className="px-4 py-2 w-12 text-center"></th> {/* Icon Column */}
+  <div className="w-full overflow-x-auto">
+    <div className="min-w-[900px]"> {/* This forces the table to be wider than screen */}
+      <table className="table-auto w-full border-collapse">
+        <thead className="text-[#00000080]">
+          <tr className="text-left text-sm font-medium border-b">
+            <th className="px-4 py-2 w-10"></th>
+            <th className="px-4 py-2 w-1/6">ISSUE NO</th>
+            <th className="px-4 py-2 w-1/4">REPORTER NAME</th>
+            <th className="px-4 py-2 w-1/6">REPORTER STATUS</th>
+            <th className="px-4 py-2 w-1/5">ISSUE TYPE</th>
+            <th className="px-4 py-2 w-1/6">DATE</th>
+            <th className="px-4 py-2 w-12 text-center"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {overviewdata.map((data, index) => (
+            <tr className="border-b text-sm text-[#4F5144]" key={index}>
+              <td className="px-4 py-2">
+                <input type="checkbox" className="w-4 h-4" />
+              </td>
+              <td className="px-4 py-2">{data.regno}</td>
+              <td className="px-4 py-2">{data.username}</td>
+              <td className="px-4 py-2">
+                <span
+                  className={`px-2 py-1 rounded-md ${
+                    data.status === "Active"
+                      ? "text-[#E2F1FC] bg-[#02487A]"
+                      : data.status === "Completed"
+                      ? "text-[#027A48] bg-[#ECFDF3]"
+                      : data.status === "Pending"
+                      ? "text-[#713F12] bg-[#FEF9C3]"
+                      : "text-gray-500 bg-gray-200"
+                  }`}
+                >
+                  {data.status}
+                </span>
+              </td>
+              <td className="px-4 py-4">{data.type}</td>
+              <td className="px-4">{data.date}</td>
+              <td className="px-4 py-2 text-center">
+                <MdArrowOutward />
+              </td>
             </tr>
-          </thead>
-
-          {/* Table Body */}
-          <tbody >
-            {overviewdata.map((data, index) => (
-              <tr className="border-b text-sm  text-[#4F5144]" key={index}>
-                <td className="px-4 py-2">
-                  <input type="checkbox" className="w-4 h-4" />
-                </td>
-                <td className="px-4 py-2">{data.regno}</td>
-                <td className="px-4 py-2">{data.username}</td>
-                <td className="px-4 py-2">
-                  <span
-                    className={`px-2 py-1 rounded-md ${
-                      data.status === "Active"
-                        ? "text-[#E2F1FC] bg-[#02487A]"
-                        : data.status === "Completed"
-                        ? "text-[#027A48] bg-[#ECFDF3]"
-                        : data.status === "Pending"
-                        ? "text-[#713F12] bg-[#FEF9C3]"
-                        : "text-gray-500 bg-gray-200"
-                    }`}
-                  >
-                    {data.status}
-                  </span>
-                </td>
-                <td className="px-4 py-4">{data.type}</td>
-                <td className="px-4">{data.date}</td>
-                <td className="px-4 py-2 text-center">
-                  <MdArrowOutward />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <AdminPagination />
+          ))}
+        </tbody>
+      </table>
     </div>
+  </div>
+
+  <AdminPagination />
+</div>
+
   );
 };
 

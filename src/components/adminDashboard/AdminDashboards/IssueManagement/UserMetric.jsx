@@ -26,7 +26,7 @@ const UserMetric = () => {
         <div>
             <h1 className="font-sanns pt-8 font-medium text-[22px]">User Metric Overview</h1>
         </div>
-        <div className='flex justify-start gap-12 border-b-2 border-dotted py-6'>
+        <div className='md:flex justify-start md:space-y-0 space-y-2 gap-12 border-b-2 border-dotted py-6'>
         {issues.map((issue) =>(
             <div className="border-l pl-1 first:border-l-0"   key={issue.id}>
                  <MetricAdmin title={issue.title} balance={issue.balance}/>
