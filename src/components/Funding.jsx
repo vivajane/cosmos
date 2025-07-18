@@ -1,6 +1,7 @@
 import React from "react";
 import { GrFormNextLink } from "react-icons/gr";
 import Button from "./Button";
+import { NavLink } from "react-router-dom";
 
 const Funding = () => {
   return (
@@ -17,7 +18,7 @@ const Funding = () => {
         </p>
         <div className=" gap-2 my-12 sm:my-0 relative ">
           <Button variant="secondary" size="lg">
-            Begin Your Investment Journey Today
+           <NavLink to="/signup"> Begin Your Investment Journey Today</NavLink>
           </Button>
           <span className="absolute right-[5px] top-[7px]">
             <GrFormNextLink size={30} />
