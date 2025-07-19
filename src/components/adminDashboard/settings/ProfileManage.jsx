@@ -6,16 +6,16 @@ const ProfileManage = () => {
      <div className="p-4">
           <div className="flex justify-between">
             <div className="flex  w-full justify-between">
-              <div className="flex gap-4 items-center">
+              <div className="flex md:gap-4 gap-2 items-center">
                 <div>
-                  <img className="h-10 w-10 rounded-full" src={pic} alt="pic" />
+                  <img className="md:h-10 md:w-10 h-8 w-8 rounded-full" src={pic} alt="pic" />
                 </div>
-                <div>
-                  <h1>Profile Picture</h1>
+                <div className='flex flex-col space-y-1'>
+                  <h1 className='lg:text-sm text-xs'>Profile Picture</h1>
                   <p className="text-xs text-[#1E1E1ECC]">PNG.JPEG under 20mb</p>
                 </div>
               </div>
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 text-xs md:text-sm items-center">
                 <button className="border-[#6B911B] border px-2 py-1 text-[#6B911B]">
                   Change Profile
                 </button>
@@ -24,7 +24,7 @@ const ProfileManage = () => {
             </div>
           </div>
           <form action="">
-            <h1 className="font-sanns text-xl font-medium py-3">
+            <h1 className="font-sanns text-sm md:text-lg lg:text-xl font-medium py-3">
               Edit Profile Information
             </h1>
     

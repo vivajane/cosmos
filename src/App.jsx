@@ -58,6 +58,7 @@ const Layout = ({ children }) => {
     location.pathname.includes("/investments") ||
     location.pathname.includes("/adminDashboard");
   location.pathname.includes("/userDashboard");
+  location.pathname.includes("/adminsettings");
 
   return (
     <div>
